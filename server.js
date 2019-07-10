@@ -28,7 +28,7 @@ app.get("/db", (req, res) => {
       // res.json({ data: results.rows });
       res.send(results.rows);
       // res.send("Hey, we got here");
-      console.log("results: " + results.rows);
+      // console.log("results: " + results.rows);
     }
   });
 });

@@ -17,12 +17,11 @@ class Main extends Component {
       let resFull = [];
       // For every piece of data in the array push it to a resFull.
       for (let i = 0; i < res; i++) {
-        if (i == res - 1) {
+        if (i === res - 1) {
           resFull.push(response.data[i].skill_name);
         } else {
           resFull.push(response.data[i].skill_name + ", ");
         }
-        console.log("Inside state data: " + resFull);
       }
       // Set state of data to complete array (resFull) of data
       this.setState({
@@ -66,17 +65,26 @@ class Main extends Component {
           <ul>
             <li>
               <a href="#home">
-                <img src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/github2.jpg" />
+                <img
+                  src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/github2.jpg"
+                  alt="github"
+                />
               </a>
             </li>
             <li>
               <a href="#news">
-                <img src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/linkedin2.png" />
+                <img
+                  src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/linkedin2.png"
+                  alt="linkedin"
+                />
               </a>
             </li>
             <li>
               <a href="mailto:jonnyv212@hotmail.com?Subject=Hello">
-                <img src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/email6.png" />
+                <img
+                  src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/email6.png"
+                  alt="email"
+                />
               </a>
             </li>
           </ul>
@@ -93,6 +101,7 @@ class Main extends Component {
           <div className="Pimg">
             <img
               src={pjImage}
+              alt="pjImage"
               style={{ boxShadow: "0 1rem 1rem rgba(0, 0, 0, 0.2)" }}
             />
           </div>
@@ -108,7 +117,10 @@ class Main extends Component {
             <a href={pjPreview}>Demo</a>
 
             <a href={pjSource} target="_blank">
-              <img src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/projects/source.png" />
+              <img
+                src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/projects/source.png"
+                alt="source"
+              />
               Source
             </a>
           </div>
@@ -147,7 +159,7 @@ class Main extends Component {
   skillBlock = (image, skillType, skillName) => {
     return (
       <div className="skillBlock">
-        <img src={image} />
+        <img src={image} alt="skillimage" />
         <h3 className="skillType">{skillType}</h3>
         <p className="skillName">{skillName}</p>
       </div>
@@ -196,17 +208,26 @@ class Main extends Component {
       <ul>
         <li>
           <a href="#home">
-            <img src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/github2.jpg" />
+            <img
+              src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/github2.jpg"
+              alt="github"
+            />
           </a>
         </li>
         <li>
           <a href="#home">
-            <img src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/linkedin2.png" />
+            <img
+              src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/linkedin2.png"
+              alt="linkedin"
+            />
           </a>
         </li>
         <li>
           <a href="#home">
-            <img src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/outlook2.png" />
+            <img
+              src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/outlook2.png"
+              alt="outlook"
+            />
           </a>
         </li>
       </ul>
