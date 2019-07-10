@@ -1,0 +1,16 @@
+[
+  {
+    "projectName": "Portfolio",
+    "image": "https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/projects/portfolio_preview.png",
+    "description": "The page you are currently viewing! AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "preview": "Preview",
+    "source": "https://github.com/Jonnyv212/Portfolio"
+  },
+  {
+    "projectName": "CNECENTRAL",
+    "image": "https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/cnecentral_preview.png",
+    "description": "CNE Central description",
+    "preview": "Preview",
+    "source": "https://github.com/Jonnyv212/Portfolio"
+  }
+]
