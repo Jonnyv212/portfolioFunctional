@@ -8,9 +8,9 @@
   },
   {
     "projectName": "CNECENTRAL",
-    "image": "https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/cnecentral_preview.png",
+    "image": "https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/projects/cnecentral_preview.png",
     "description": "CNE Central description",
     "preview": "Preview",
-    "source": "https://github.com/Jonnyv212/Portfolio"
+    "source": "https://github.com/kuribelle/CNECENTRAL"
   }
 ]
