@@ -39,8 +39,14 @@ class Main extends Component {
           <li>
             <a href="#about">About</a>
           </li>
-          <li>
-            <a href="#resume">Resume</a>
+          <li className="dropdown">
+            <button className="dropbtn">Resume 
+              <i className="fa fa-caret-down"></i>
+            </button>
+            <div className="dropdown-content">
+              <a href="http://bit.ly/2XSQuos" target="_blank">Preview</a>
+              <a href="http://bit.ly/2Lg5Ux0">Download</a>
+            </div>
           </li>
           <li>
             <a href="#projects">Projects</a>
@@ -165,15 +171,24 @@ class Main extends Component {
       </div>
     );
   };
+
+  contact = () => {
+    return(
+      <div className="contact">
+        Contact Me Goes Here
+      </div>
+    )
+  }
   content = () => {
     return (
       <div id="about">
         <div>
-          Description of who I am, what I do. Blah blah blah.
-          <div className="Resume">
-            <h1>Resume download button here. pdf</h1>
-          </div>
-          {/* <hr /> */}
+        Information Technology professional with 5 years of experience in the Education and Healthcare industry. Fast learner able to quickly adapt to industry standards, trends, and needs. Passionate about web development and learning about new technologies. Searching for the right opportunity with a compatible culture. 
+        {/* <div className="resume">
+              <h5>Download Resume</h5>
+              <a className="resumeBtn" href="bit.ly/2Lg5Ux0"><img src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/skills/download-button.png" alt="resume"/></a>
+        </div> */}
+          <hr />
         </div>
         <div className="skills">
           <h1>Skills</h1>
@@ -199,6 +214,7 @@ class Main extends Component {
           <h2>PROJECTS</h2>
           <Fade>{this.projectLister()}</Fade>
         </div>
+        {this.contact()}
       </div>
     );
   };
