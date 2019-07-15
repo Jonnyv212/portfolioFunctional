@@ -1,0 +1,35 @@
+.skills {
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+  /* padding-top: 50px; */
+  padding-bottom: 50px;
+}
+.skills h1 {
+  text-align: center;
+}
+
+.skillContainer {
+  width: 100%;
+  /* box-sizing: border-box; */
+  background-color: rgb(247, 247, 247);
+  display: flex;
+}
+
+.skillBlock {
+  width: 31%;
+  text-align: center;
+  /* border: solid black; */
+  display: inline-block;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  margin-left: 14px;
+  margin-right: 14px;
+  background-color: white;
+  box-shadow: 3px 3px 5px 5px #eeeeee;
+}
+
+.skillBlock img {
+  max-width: 100%;
+  width: 20%;
+  margin: 12px;
+}

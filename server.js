@@ -20,8 +20,8 @@ connection.connect(err => {
   }
 });
 
-app.get("/db", (req, res) => {
-  connection.query("SELECT * FROM public.skills", (err, results) => {
+app.get("/skills", (req, res) => {
+  connection.query("SELECT * FROM portfolio.skills", (err, results) => {
     if (err) {
       return res.send(err);
     } else {
@@ -29,6 +29,16 @@ app.get("/db", (req, res) => {
       res.send(results.rows);
       // res.send("Hey, we got here");
       // console.log("results: " + results.rows);
+    }
+  });
+});
+
+app.get("/projects", (req, res) => {
+  connection.query("SELECT * FROM portfolio.projects", (err, results) => {
+    if (err) {
+      return res.send(err);
+    } else {
+      res.send(results.rows);
     }
   });
 });

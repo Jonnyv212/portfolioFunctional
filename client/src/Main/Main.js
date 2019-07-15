@@ -1,8 +1,7 @@
 import React, { Component } from "react";
+import Projects from "../Projects/Projects.js";
+import Skills from "../Skills/Skills.js";
 import "./Main.css";
-import axios from "axios";
-import PJdata from "../Main/Main.json";
-import Fade from "react-reveal/Fade";
 
 class Main extends Component {
   constructor(props) {
@@ -11,41 +10,28 @@ class Main extends Component {
       data: []
     };
   }
-  componentDidMount() {
-    axios.get("/db").then(response => {
-      let res = response.data.length;
-      let resFull = [];
-      // For every piece of data in the array push it to a resFull.
-      for (let i = 0; i < res; i++) {
-        if (i === res - 1) {
-          resFull.push(response.data[i].skill_name);
-        } else {
-          resFull.push(response.data[i].skill_name + ", ");
-        }
-      }
-      // Set state of data to complete array (resFull) of data
-      this.setState({
-        data: resFull
-      });
-    });
-  }
+
+  // componentDidMount() {}
 
   //Navigation bar at the top of the page. Fixed positioning
   nav = () => {
     return (
-      <div>
+      <div className="nav">
         <p>Jonathan Vega</p>
         <ul>
           <li>
             <a href="#about">About</a>
           </li>
           <li className="dropdown">
-            <button className="dropbtn">Resume 
-              <i className="fa fa-caret-down"></i>
+            <button className="dropbtn">
+              Resume
+              <i className="fa fa-caret-down" />
             </button>
             <div className="dropdown-content">
-              <a href="http://bit.ly/2XSQuos" target="_blank">Preview</a>
-              <a href="http://bit.ly/2Lg5Ux0">Download</a>
+              <a href="http://bit.ly/2XSQuos" target="_blank">
+                Preview
+              </a>
+              <a href="http://bit.ly/2LOGAxL">Download</a>
             </div>
           </li>
           <li>
@@ -99,164 +85,70 @@ class Main extends Component {
     );
   };
 
-  //Generates a project template for the portfolio function.
-  projects = (pjName, pjImage, pjDescription, pjPreview, pjSource) => {
-    return (
-      <div className="Pcontainer">
-        <div className="Pcontent">
-          <div className="Pimg">
-            <img
-              src={pjImage}
-              alt="pjImage"
-              style={{ boxShadow: "0 1rem 1rem rgba(0, 0, 0, 0.2)" }}
-            />
-          </div>
-
-          <div className="Pinfo">
-            <div className="Ptitle">{pjName}</div>
-            {pjDescription}
-          </div>
-        </div>
-
-        <div className="Pbottom">
-          <div className="PbottomLinks">
-            <a href={pjPreview}>Demo</a>
-
-            <a href={pjSource} target="_blank">
-              <img
-                src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/projects/source.png"
-                alt="source"
-              />
-              Source
-            </a>
-          </div>
-          <div className="Pstacks">
-            <ul>
-              <li>ReactJS</li>
-              <li>JavaScript </li>
-            </ul>
-          </div>
-        </div>
-        {/* <hr /> */}
-      </div>
-    );
-  };
-
-  //Generates a project based on the JSON data.
-  //Takes the JSON data and applies it from a loop to the projects function.
-  projectLister = () => {
-    let pjIndex = PJdata.length;
-    let pjFull = [];
-    for (let i = 0; i < pjIndex; i++) {
-      pjFull.push(
-        this.projects(
-          PJdata[i].projectName,
-          PJdata[i].image,
-          PJdata[i].description,
-          PJdata[i].preview,
-          PJdata[i].source
-        )
-      );
-    }
-
-    return pjFull;
-  };
-
-  skillBlock = (image, skillType, skillName) => {
-    return (
-      <div className="skillBlock">
-        <img src={image} alt="skillimage" />
-        <h3 className="skillType">{skillType}</h3>
-        <p className="skillName">{skillName}</p>
-      </div>
-    );
-  };
-
   contact = () => {
-    return(
-      <div className="contact">
-        Contact Me Goes Here
-      </div>
-    )
-  }
+    return <div className="contact">Contact Me Goes Here</div>;
+  };
   content = () => {
     return (
-      <div id="about">
-        <div>
-        Information Technology professional with 5 years of experience in the Education and Healthcare industry. Fast learner able to quickly adapt to industry standards, trends, and needs. Passionate about web development and learning about new technologies. Searching for the right opportunity with a compatible culture. 
-        {/* <div className="resume">
-              <h5>Download Resume</h5>
-              <a className="resumeBtn" href="bit.ly/2Lg5Ux0"><img src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/skills/download-button.png" alt="resume"/></a>
-        </div> */}
+      <div className="content">
+        <div id="about">
+          Information Technology professional with 5 years of experience in the
+          Education and Healthcare industry. Fast learner able to quickly adapt
+          to industry standards, trends, and needs. Passionate about web
+          development and learning about new technologies. Searching for the
+          right opportunity with a compatible culture.
+          {/* <div className="resume">
+                <h5>Download Resume</h5>
+                <a className="resumeBtn" href="bit.ly/2Lg5Ux0"><img src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/skills/download-button.png" alt="resume"/></a>
+          </div> */}
           <hr />
+          <Skills />
+          <Projects />
+          {this.contact()}
         </div>
-        <div className="skills">
-          <h1>Skills</h1>
-          <div className="skillContainer">
-            {this.skillBlock(
-              "https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/skills/frontend.png",
-              "Frontend",
-              this.state.data
-            )}
-            {this.skillBlock(
-              "https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/skills/backend.png",
-              "Backend",
-              "Skill Name Here"
-            )}
-            {this.skillBlock(
-              "https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/skills/git.png",
-              "Other",
-              "Skill Name Here"
-            )}
-          </div>
-        </div>
-        <div className="Projects" id="projects">
-          <h2>PROJECTS</h2>
-          <Fade>{this.projectLister()}</Fade>
-        </div>
-        {this.contact()}
       </div>
     );
   };
 
   footer = () => {
     return (
-      <ul>
-        <li>
-          <a href="#home">
-            <img
-              src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/github2.jpg"
-              alt="github"
-            />
-          </a>
-        </li>
-        <li>
-          <a href="#home">
-            <img
-              src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/linkedin2.png"
-              alt="linkedin"
-            />
-          </a>
-        </li>
-        <li>
-          <a href="#home">
-            <img
-              src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/outlook2.png"
-              alt="outlook"
-            />
-          </a>
-        </li>
-      </ul>
+      <div className="footer">
+        <ul>
+          <li>
+            <a href="#home">
+              <img
+                src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/github2.jpg"
+                alt="github"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#home">
+              <img
+                src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/linkedin2.png"
+                alt="linkedin"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="#home">
+              <img
+                src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/outlook2.png"
+                alt="outlook"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
     );
   };
   render() {
     return (
       <div className="main">
-        <div className="nav">{this.nav()}</div>
-
-        <div>{this.header()}</div>
-        <div className="content">{this.content()}</div>
-        <div className="footer">{this.footer()}</div>
+        {this.nav()}
+        {this.header()}
+        {this.content()}
+        {this.footer()}
       </div>
     );
   }
