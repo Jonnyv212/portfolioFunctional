@@ -28,10 +28,10 @@ class Main extends Component {
               <i className="fa fa-caret-down" />
             </button>
             <div className="dropdown-content">
-              <a href="http://bit.ly/2XSQuos" target="_blank">
+              <a href="http://bit.ly/2M6hWsH" target="_blank">
                 Preview
               </a>
-              <a href="http://bit.ly/2LOGAxL">Download</a>
+              <a href="http://bit.ly/2YWKx7l">Download</a>
             </div>
           </li>
           <li>
