@@ -7,7 +7,10 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [],
+      name: "",
+      email: "",
+      message: ""
     };
   }
 
@@ -85,8 +88,46 @@ class Main extends Component {
     );
   };
 
+  onSubmit = e => {
+    e.preventDefault()
+    console.log(this.state.name, this.state.email, this.state.message)
+    this.setState({
+      name: "",
+      email: "",
+      message: ""
+    })
+    
+  }
+  change = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
   contact = () => {
-    return <div className="contact">Contact Me Goes Here</div>;
+    return (
+    <form className="contact" >
+      <h1>CONTACT ME</h1>
+        <input
+        name="name"
+        placeholder="Full Name"
+        value={this.state.name}
+        onChange={e => this.change(e)}/>
+        <br />
+        <input
+        name="email"
+        placeholder="Email Address"
+        value={this.state.email}
+        onChange={e => this.change(e)}/>
+        <br />
+        <input
+        name="message"
+        placeholder="Message"
+        value={this.state.message}
+        onChange={e => this.change(e)}/>
+        <br />
+        <button onClick={e => this.onSubmit(e)}>Submit</button>
+    </form>);
   };
   content = () => {
     return (
