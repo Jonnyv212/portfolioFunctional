@@ -13,6 +13,10 @@ class Projects extends Component {
   }
 
   componentDidMount = () => {
+    this.getData();
+  };
+
+  getData = () => {
     axios.get("/projects").then(response => {
       let res = response.data.length;
       let resFull = [];
@@ -31,26 +35,26 @@ class Projects extends Component {
     });
   };
 
-  //   test = () => {
-  //     let Arr = [];
-  //     let innerArr = [];
-  //     let count = 0;
-  //     this.state.data.map(filteredItem => {
-  //       // blah.push(filteredItem.project_preview)
-  //       let entries = Object.entries(filteredItem);
-  //       //   for (let i = 1; i < entries.length; i++) {
-  //       //     innerArr.push(entries[i][1]);
-  //       //     count++;
-  //       //     // if ((count = 5)) {
-  //       //     //   Arr.push(innerArr);
-  //       //     //   count = 0;
-  //       //     // }
-  //       //   }
-  //       console.log(entries[1][1]);
-  //       //   console.log(Arr);
-  //       return entries;
-  //     });
-  //   };
+  // test = () => {
+  //   let Arr = [];
+  //   let innerArr = [];
+  //   let count = 0;
+  //   this.state.data.map(filteredItem => {
+  //     // blah.push(filteredItem.project_preview)
+  //     let entries = Object.entries(filteredItem);
+  //     //   for (let i = 1; i < entries.length; i++) {
+  //     //     innerArr.push(entries[i][1]);
+  //     //     count++;
+  //     //     // if ((count = 5)) {
+  //     //     //   Arr.push(innerArr);
+  //     //     //   count = 0;
+  //     //     // }
+  //     //   }
+  //     console.log(entries[1][1]);
+  //     //   console.log(Arr);
+  //     return entries;
+  //   });
+  // };
 
   //Generates a project template for the portfolio function.
   projects = (pjName, pjImage, pjDescription, pjPreview, pjSource) => {
@@ -97,20 +101,38 @@ class Projects extends Component {
 
   //Generates a project based on the JSON data.
   //Takes the JSON data and applies it from a loop to the projects function.
-  projectLister = () => {
-    let pjIndex = PJdata.length;
+  //   projectLister = () => {
+  //     let pjIndex = PJdata.length;
+  //     let pjFull = [];
+  //     for (let i = 0; i < pjIndex; i++) {
+  //       pjFull.push(
+  //         this.projects(
+  //           PJdata[i].projectName,
+  //           PJdata[i].image,
+  //           PJdata[i].description,
+  //           PJdata[i].preview,
+  //           PJdata[i].source
+  //         )
+  //       );
+  //     }
+  //     console.log(pjFull);
+  //   };
+
+  test2 = () => {
+    let pjName = this.state.data.map(item => item.project_name);
+    let pjImage = this.state.data.map(item => item.project_image);
+    let pjDesc = this.state.data.map(item => item.project_description);
+    let pjPrev = this.state.data.map(item => item.project_preview);
+    let pjSource = this.state.data.map(item => item.project_source);
+    let dataIndex = this.state.data.length;
     let pjFull = [];
-    for (let i = 0; i < pjIndex; i++) {
+
+    for (let i = 0; i < 2; i++) {
       pjFull.push(
-        this.projects(
-          PJdata[i].projectName,
-          PJdata[i].image,
-          PJdata[i].description,
-          PJdata[i].preview,
-          PJdata[i].source
-        )
+        this.projects(pjName[i], pjImage[i], pjDesc[i], pjPrev[i], pjSource[i])
       );
     }
+    console.log(pjImage[1]);
     return pjFull;
   };
 
@@ -118,7 +140,8 @@ class Projects extends Component {
     return (
       <div className="Projects" id="projects">
         <h2>PROJECTS</h2>
-        <Fade>{this.projectLister()}</Fade>
+        {/* {this.projectLister()} */}
+        <Fade>{this.test2()}</Fade>
       </div>
     );
   }

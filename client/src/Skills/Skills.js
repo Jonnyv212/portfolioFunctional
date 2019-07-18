@@ -6,11 +6,21 @@ class Skills extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      frontend: [],
+      backend: [],
+      other: []
     };
   }
 
   componentDidMount = () => {
+    // Set state of data to complete array (resFull) of data
+    // this.setState({ frontend: this.getData("/skills/frontend") });
+    // this.getData("/skills/backend", this.state.backend);
+    // this.getData("/skills/other", this.state.other);
+    console.log(this.state.frontend);
+  };
+
+  getData = () => {
     axios.get("/skills").then(response => {
       let res = response.data.length;
       let resFull = [];
@@ -22,10 +32,8 @@ class Skills extends Component {
           resFull.push(response.data[i].skill_name + ", ");
         }
       }
-      // Set state of data to complete array (resFull) of data
-      this.setState({
-        data: resFull
-      });
+      this.setState({ data: resFull });
+      // return resFull;
     });
   };
 
@@ -47,17 +55,17 @@ class Skills extends Component {
           {this.skillBlock(
             "https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/skills/frontend.png",
             "Frontend",
-            this.state.data
+            this.state.frontend
           )}
           {this.skillBlock(
             "https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/skills/backend.png",
             "Backend",
-            "Skill Name Here"
+            this.state.backend
           )}
           {this.skillBlock(
             "https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/skills/git.png",
             "Other",
-            "Skill Name Here"
+            this.state.other
           )}
         </div>
       </div>

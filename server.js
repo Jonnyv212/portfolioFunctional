@@ -13,25 +13,78 @@ const connection = new Client({
 app.use(express.static(path.join(__dirname, "client/build")));
 
 connection.connect(err => {
-  //  console.log(process.env);
-  //  console.log(process.env.DATABASE_URL);
   if (err) {
     return err;
   }
 });
 
-app.get("/skills", (req, res) => {
-  connection.query("SELECT * FROM portfolio.skills", (err, results) => {
-    if (err) {
-      return res.send(err);
-    } else {
-      // res.json({ data: results.rows });
-      res.send(results.rows);
-      // res.send("Hey, we got here");
-      // console.log("results: " + results.rows);
-    }
+queryData = (query, path) => {
+  app.get(query, (req, res) => {
+    connection.query(path, (err, results) => {
+      if (err) {
+        return res.send(err);
+      } else {
+        res.send(results.rows);
+      }
+    });
   });
-});
+};
+
+// let getData = (path, query) => {
+//   let qArray = [];
+
+//   qArray.push(path);
+//   qArray.push(query);
+
+//   return qArray;
+// };
+
+var frontendQuery =
+  "SELECT skill_name FROM portfolio.skills " +
+  "WHERE portfolio.skills.skill_type = 'Frontend' ";
+var frontendPath = "/skills/frontend";
+
+var backendQuery =
+  "SELECT skill_name FROM portfolio.skills " +
+  "WHERE portfolio.skills.skill_type = 'Backend' ";
+var backendPath = "/skills/backend";
+
+var otherQuery =
+  "SELECT skill_name FROM portfolio.skills " +
+  "WHERE portfolio.skills.skill_type = 'Other' ";
+var otherPath = "/skills/backend";
+
+queryData(frontendPath, frontendQuery);
+queryData(backendPath, backendQuery);
+queryData(otherPath, otherQuery);
+
+// app.get("/skills/backend", (req, res) => {
+//   connection.query(
+//     "SELECT skill_name FROM portfolio.skills " +
+//       "WHERE portfolio.skills.skill_type = 'Backend' ",
+//     (err, results) => {
+//       if (err) {
+//         return res.send(err);
+//       } else {
+//         res.send(results.rows);
+//       }
+//     }
+//   );
+// });
+
+// app.get("/skills/other", (req, res) => {
+//   connection.query(
+//     "SELECT skill_name FROM portfolio.skills " +
+//       "WHERE portfolio.skills.skill_type = 'Other' ",
+//     (err, results) => {
+//       if (err) {
+//         return res.send(err);
+//       } else {
+//         res.send(results.rows);
+//       }
+//     }
+//   );
+// });
 
 app.get("/projects", (req, res) => {
   connection.query("SELECT * FROM portfolio.projects", (err, results) => {
