@@ -3,6 +3,7 @@ import Projects from "../Projects/Projects.js";
 import Skills from "../Skills/Skills.js";
 // import ".\client\Email-icon.png"
 import "./Main.css";
+import axios from "axios";
 
 class Main extends Component {
   constructor(props) {
@@ -91,7 +92,13 @@ class Main extends Component {
 
   onSubmit = e => {
     e.preventDefault()
-    console.log(this.state.name, this.state.email, this.state.message)
+    const {name, email, message} = this.state;
+    console.log("client: " + name, email, message);
+
+    axios.post("/contact", {
+      test: name
+    })
+
     this.setState({
       name: "",
       email: "",

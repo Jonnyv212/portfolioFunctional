@@ -25,8 +25,10 @@ class Skills extends Component {
       // Set state of data to complete array (resFull) of data
       this.setState({
         data: resFull
-      });
-    });
+      })
+    }).catch(error => {
+      console.log(error);
+    })
   };
 
   skillBlock = (image, skillType, skillName) => {

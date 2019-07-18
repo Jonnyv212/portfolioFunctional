@@ -33,6 +33,12 @@ app.get("/skills", (req, res) => {
   });
 });
 
+app.post("/contact", (req, res) => {
+  const test = req.body;
+  console.log("server: " + test)
+});
+
+
 app.get("/projects", (req, res) => {
   connection.query("SELECT * FROM portfolio.projects", (err, results) => {
     if (err) {
