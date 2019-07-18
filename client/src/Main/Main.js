@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import Projects from "../Projects/Projects.js";
 import Skills from "../Skills/Skills.js";
+// import ".\client\Email-icon.png"
 import "./Main.css";
+import axios from "axios";
 
 class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      data: [],
+      name: "",
+      email: "",
+      message: ""
     };
   }
 
@@ -19,9 +24,6 @@ class Main extends Component {
       <div className="nav">
         <p>Jonathan Vega</p>
         <ul>
-          <li>
-            <a href="#about">About</a>
-          </li>
           <li className="dropdown">
             <button className="dropbtn">
               Resume
@@ -33,6 +35,9 @@ class Main extends Component {
               </a>
               <a href="http://bit.ly/2YWKx7l">Download</a>
             </div>
+          </li>
+          <li>
+            <a href="#about">About</a>
           </li>
           <li>
             <a href="#projects">Projects</a>
@@ -56,7 +61,7 @@ class Main extends Component {
         <div className="list">
           <ul>
             <li>
-              <a href="#home">
+              <a href="https://github.com/Jonnyv212/"  target="_blank">
                 <img
                   src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/github2.jpg"
                   alt="github"
@@ -64,7 +69,7 @@ class Main extends Component {
               </a>
             </li>
             <li>
-              <a href="#news">
+              <a href="https://www.linkedin.com/in/jvega212" target="_blank">
                 <img
                   src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/linkedin2.png"
                   alt="linkedin"
@@ -74,7 +79,7 @@ class Main extends Component {
             <li>
               <a href="mailto:jonnyv212@hotmail.com?Subject=Hello">
                 <img
-                  src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/email6.png"
+                   src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/Email-icon2.png"
                   alt="email"
                 />
               </a>
@@ -85,8 +90,54 @@ class Main extends Component {
     );
   };
 
+  onSubmit = e => {
+    e.preventDefault()
+    const {name, email, message} = this.state;
+    console.log("client: " + name, email, message);
+
+    axios.post("/contact", {
+      test: name
+    })
+
+    this.setState({
+      name: "",
+      email: "",
+      message: ""
+    })
+    
+  }
+  change = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
   contact = () => {
-    return <div className="contact">Contact Me Goes Here</div>;
+    return (
+    <div id="contact">
+    <form className="contact" >
+      <h1>CONTACT ME</h1>
+      <div className="upperContact">
+        <input className="name"
+        name="name"
+        placeholder="Full Name"
+        value={this.state.name}
+        onChange={e => this.change(e)}/>
+        <input className="email"
+        name="email"
+        placeholder="Email Address"
+        value={this.state.email}
+        onChange={e => this.change(e)}/>
+      </div>
+      <textarea className="message"
+      name="message"
+      placeholder="Message"
+      value={this.state.message}
+      onChange={e => this.change(e)}/>
+        <br />
+        <button onClick={e => this.onSubmit(e)}>Submit</button>
+    </form>
+    </div>);
   };
   content = () => {
     return (
@@ -97,13 +148,11 @@ class Main extends Component {
           to industry standards, trends, and needs. Passionate about web
           development and learning about new technologies. Searching for the
           right opportunity with a compatible culture.
-          {/* <div className="resume">
-                <h5>Download Resume</h5>
-                <a className="resumeBtn" href="bit.ly/2Lg5Ux0"><img src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/skills/download-button.png" alt="resume"/></a>
-          </div> */}
           <hr />
           <Skills />
+          <hr />
           <Projects />
+          <hr />
           {this.contact()}
         </div>
       </div>
@@ -115,7 +164,7 @@ class Main extends Component {
       <div className="footer">
         <ul>
           <li>
-            <a href="#home">
+            <a href="https://github.com/Jonnyv212/"  target="_blank">
               <img
                 src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/github2.jpg"
                 alt="github"
@@ -123,7 +172,7 @@ class Main extends Component {
             </a>
           </li>
           <li>
-            <a href="#home">
+            <a href="https://www.linkedin.com/in/jvega212"  target="_blank">
               <img
                 src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/linkedin2.png"
                 alt="linkedin"
@@ -131,10 +180,10 @@ class Main extends Component {
             </a>
           </li>
           <li>
-            <a href="#home">
+            <a href="mailto:jonnyv212@hotmail.com?Subject=Hello">
               <img
-                src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/outlook2.png"
-                alt="outlook"
+                src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/Email-icon2.png"
+                alt="email"
               />
             </a>
           </li>

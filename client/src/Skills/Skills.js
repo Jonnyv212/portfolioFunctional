@@ -21,20 +21,27 @@ class Skills extends Component {
   };
 
   getData = () => {
-    axios.get("/skills").then(response => {
-      let res = response.data.length;
-      let resFull = [];
-      // For every piece of data in the array push it to a resFull.
-      for (let i = 0; i < res; i++) {
-        if (i === res - 1) {
-          resFull.push(response.data[i].skill_name);
-        } else {
-          resFull.push(response.data[i].skill_name + ", ");
+    axios
+      .get("/skills")
+      .then(response => {
+        let res = response.data.length;
+        let resFull = [];
+        // For every piece of data in the array push it to a resFull.
+        for (let i = 0; i < res; i++) {
+          if (i === res - 1) {
+            resFull.push(response.data[i].skill_name);
+          } else {
+            resFull.push(response.data[i].skill_name + ", ");
+          }
         }
-      }
-      this.setState({ data: resFull });
-      // return resFull;
-    });
+        // Set state of data to complete array (resFull) of data
+        this.setState({
+          data: resFull
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   skillBlock = (image, skillType, skillName) => {
