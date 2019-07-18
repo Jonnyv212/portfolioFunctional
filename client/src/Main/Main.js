@@ -56,7 +56,7 @@ class Main extends Component {
         <div className="list">
           <ul>
             <li>
-              <a href="#home">
+              <a href="https://github.com/Jonnyv212/"  target="_blank">
                 <img
                   src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/github2.jpg"
                   alt="github"
@@ -64,7 +64,7 @@ class Main extends Component {
               </a>
             </li>
             <li>
-              <a href="#news">
+              <a href="https://www.linkedin.com/in/jvega212" target="_blank">
                 <img
                   src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/linkedin2.png"
                   alt="linkedin"
@@ -97,10 +97,6 @@ class Main extends Component {
           to industry standards, trends, and needs. Passionate about web
           development and learning about new technologies. Searching for the
           right opportunity with a compatible culture.
-          {/* <div className="resume">
-                <h5>Download Resume</h5>
-                <a className="resumeBtn" href="bit.ly/2Lg5Ux0"><img src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/skills/download-button.png" alt="resume"/></a>
-          </div> */}
           <hr />
           <Skills />
           <Projects />
@@ -115,7 +111,7 @@ class Main extends Component {
       <div className="footer">
         <ul>
           <li>
-            <a href="#home">
+            <a href="https://github.com/Jonnyv212/"  target="_blank">
               <img
                 src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/github2.jpg"
                 alt="github"
@@ -123,7 +119,7 @@ class Main extends Component {
             </a>
           </li>
           <li>
-            <a href="#home">
+            <a href="https://www.linkedin.com/in/jvega212"  target="_blank">
               <img
                 src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/linkedin2.png"
                 alt="linkedin"
@@ -131,7 +127,7 @@ class Main extends Component {
             </a>
           </li>
           <li>
-            <a href="#home">
+            <a href="mailto:jonnyv212@hotmail.com?Subject=Hello">
               <img
                 src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/outlook2.png"
                 alt="outlook"
