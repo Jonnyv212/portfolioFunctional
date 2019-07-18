@@ -138,7 +138,7 @@ html {
 
 .footer {
   background: rgb(21, 28, 34);
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
 }
 

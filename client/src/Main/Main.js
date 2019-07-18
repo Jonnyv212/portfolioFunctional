@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Projects from "../Projects/Projects.js";
 import Skills from "../Skills/Skills.js";
+// import ".\client\Email-icon.png"
 import "./Main.css";
 
 class Main extends Component {
@@ -77,7 +78,7 @@ class Main extends Component {
             <li>
               <a href="mailto:jonnyv212@hotmail.com?Subject=Hello">
                 <img
-                  src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/email6.png"
+                   src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/Email-icon2.png"
                   alt="email"
                 />
               </a>
@@ -106,6 +107,7 @@ class Main extends Component {
 
   contact = () => {
     return (
+    <div id="contact">
     <form className="contact" >
       <h1>CONTACT ME</h1>
         <input
@@ -127,7 +129,8 @@ class Main extends Component {
         onChange={e => this.change(e)}/>
         <br />
         <button onClick={e => this.onSubmit(e)}>Submit</button>
-    </form>);
+    </form>
+    </div>);
   };
   content = () => {
     return (
@@ -140,7 +143,9 @@ class Main extends Component {
           right opportunity with a compatible culture.
           <hr />
           <Skills />
+          <hr />
           <Projects />
+          <hr />
           {this.contact()}
         </div>
       </div>
@@ -170,8 +175,8 @@ class Main extends Component {
           <li>
             <a href="mailto:jonnyv212@hotmail.com?Subject=Hello">
               <img
-                src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/outlook2.png"
-                alt="outlook"
+                src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/Email-icon2.png"
+                alt="email"
               />
             </a>
           </li>
