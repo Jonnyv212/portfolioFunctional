@@ -23,9 +23,6 @@ class Main extends Component {
       <div className="nav">
         <p>Jonathan Vega</p>
         <ul>
-          <li>
-            <a href="#about">About</a>
-          </li>
           <li className="dropdown">
             <button className="dropbtn">
               Resume
@@ -37,6 +34,9 @@ class Main extends Component {
               </a>
               <a href="http://bit.ly/2YWKx7l">Download</a>
             </div>
+          </li>
+          <li>
+            <a href="#about">About</a>
           </li>
           <li>
             <a href="#projects">Projects</a>
@@ -110,23 +110,23 @@ class Main extends Component {
     <div id="contact">
     <form className="contact" >
       <h1>CONTACT ME</h1>
-        <input
+      <div className="upperContact">
+        <input className="name"
         name="name"
         placeholder="Full Name"
         value={this.state.name}
         onChange={e => this.change(e)}/>
-        <br />
-        <input
+        <input className="email"
         name="email"
         placeholder="Email Address"
         value={this.state.email}
         onChange={e => this.change(e)}/>
-        <br />
-        <input
-        name="message"
-        placeholder="Message"
-        value={this.state.message}
-        onChange={e => this.change(e)}/>
+      </div>
+      <textarea className="message"
+      name="message"
+      placeholder="Message"
+      value={this.state.message}
+      onChange={e => this.change(e)}/>
         <br />
         <button onClick={e => this.onSubmit(e)}>Submit</button>
     </form>

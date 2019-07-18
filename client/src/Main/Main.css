@@ -207,19 +207,43 @@ html {
   text-decoration: none;
 }
 
-/* .resume{
-  width: 100%
+.contact{
+  width: 100%;
+  text-align: center;
+  padding-bottom: 30px;
 }
-.resumeBtn {
-  /* text-align: center; */
-/* padding: 16px 16px; */
-/* text-decoration: none;
-  display:inline-block;
+
+.upperContact{
+width: 100%;
+margin-bottom: 10px;
 }
-.resume h5 {
+.upperContact .name{
+
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 2px;
   display: inline-block;
-  width: 50%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
-.resumeBtn img {
-  width: 20%;
-}  */
+.upperContact .email{
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.contact .message{
+  width: 80%;
+  height: 100px;
+  padding: 12px 20px;
+  margin: 8px 2px;
+  /* display: inline-block; */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: none;
+}
