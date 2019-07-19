@@ -22,7 +22,7 @@ class Main extends Component {
   nav = () => {
     return (
       <div className="nav">
-        <div id="navID">Jonathan Vega</div>
+        <div className="navName">Jonathan Vega</div>
         <ul>
           <li className="dropdown">
             <button className="dropbtn">
