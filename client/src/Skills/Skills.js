@@ -57,7 +57,7 @@ class Skills extends Component {
       <div className="skillBlock">
         <img src={image} alt="skillimage" />
         <h3 className="skillType">{skillType}</h3>
-        <p className="skillName">{skillName}</p>
+        <div className="skillName">{skillName}</div>
       </div>
     );
   };

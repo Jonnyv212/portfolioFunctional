@@ -22,7 +22,7 @@ class Main extends Component {
   nav = () => {
     return (
       <div className="nav">
-        <p>Jonathan Vega</p>
+        <div id="navID">Jonathan Vega</div>
         <ul>
           <li className="dropdown">
             <button className="dropbtn">
@@ -198,10 +198,29 @@ class Main extends Component {
     );
   };
   render() {
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+      scrollFunction();
+    };
+
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        document.getElementById("myBtn").style.display = "block";
+      } else {
+        document.getElementById("myBtn").style.display = "none";
+      }
+    }
+
     return (
       <div className="main">
         {this.nav()}
         {this.header()}
+        <a href="#navID" id="myBtn" title="Go to top">
+          Top
+        </a>
         {this.content()}
         {this.footer()}
       </div>

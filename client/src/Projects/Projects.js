@@ -79,7 +79,7 @@ class Projects extends Component {
           <div className="PbottomLinks">
             <a href={pjPreview}>Demo</a>
 
-            <a href={pjSource} target="_blank">
+            <a href={pjSource} target="blank">
               <img
                 src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/projects/source.png"
                 alt="source"
@@ -132,7 +132,7 @@ class Projects extends Component {
         this.projects(pjName[i], pjImage[i], pjDesc[i], pjPrev[i], pjSource[i])
       );
     }
-    console.log(pjImage[1]);
+    // console.log(pjImage[1]);
     return pjFull;
   };
 
