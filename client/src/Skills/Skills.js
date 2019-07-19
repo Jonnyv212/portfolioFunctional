@@ -64,8 +64,6 @@ class Skills extends Component {
 
   render() {
     return (
-      <div className="skills">
-        <h1>Skills</h1>
         <div className="skillContainer">
           {this.skillBlock(
             "https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/skills/frontend.png",
@@ -83,7 +81,6 @@ class Skills extends Component {
             this.state.other
           )}
         </div>
-      </div>
     );
   }
 }

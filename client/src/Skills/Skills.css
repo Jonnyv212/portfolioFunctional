@@ -1,12 +1,12 @@
-.skills {
+/* .skills {
   width: 100%;
   background-color: rgb(247, 247, 247);
   /* padding-top: 50px; */
-  padding-bottom: 50px;
-}
-.skills h1 {
+  /* padding-bottom: 50px; */
+/* }  */
+/* .skills h1 {
   text-align: center;
-}
+} */
 
 .skillContainer {
   width: 100%;
@@ -16,14 +16,14 @@
 }
 
 .skillBlock {
-  width: 25%;
+  width: 30%;
   text-align: center;
   /* border: solid black; */
   display: inline-block;
-  padding-top: 20px;
+  /* padding-top: 20px; */
   /* padding-bottom: 30px; */
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
   background-color: white;
   box-shadow: 3px 3px 5px 5px #eeeeee;
 }
@@ -41,7 +41,7 @@
 }
 .dataUL {
   /* width: 100%; */
-  padding-right: 15%;
+  /* padding-right: 15%; */
   padding-left: 20%;
 }
 .dataUL li {

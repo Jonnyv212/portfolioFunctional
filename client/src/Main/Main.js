@@ -114,7 +114,7 @@ class Main extends Component {
   contact = () => {
     return (
       <div id="contact">
-        <form className="contact">
+        <form className="contactContainer">
           <h1>CONTACT ME</h1>
           <div className="upperContact">
             <input
@@ -145,6 +145,41 @@ class Main extends Component {
       </div>
     );
   };
+
+  about = () => {
+    return(
+      <div id="about">
+        <div className="content">
+          Information Technology professional with 5 years of experience in the
+          Education and Healthcare industry. Fast learner able to quickly adapt
+          to industry standards, trends, and needs. Passionate about web
+          development and learning about new technologies. Searching for the
+          right opportunity with a compatible culture.
+          </div>
+      </div>
+    )
+  }
+
+  skills = () => {
+    return(
+      <div id="skills">
+        <h1>Skills</h1>
+        <div className="content">
+              <Skills />
+        </div>
+      </div>
+    )
+  }
+  projects = () => {
+    return(
+      <div id="projects">
+      <h1>Projects</h1>
+        <div className="content">
+              <Projects />
+        </div>
+    </div>
+    )
+  }
   content = () => {
     return (
       <div className="content">
@@ -154,11 +189,8 @@ class Main extends Component {
           to industry standards, trends, and needs. Passionate about web
           development and learning about new technologies. Searching for the
           right opportunity with a compatible culture.
-          <hr />
           <Skills />
-          <hr />
           <Projects />
-          <hr />
           {this.contact()}
         </div>
       </div>
@@ -218,10 +250,14 @@ class Main extends Component {
       <div className="main">
         {this.nav()}
         {this.header()}
+        {this.about()}
+        {this.skills()}
+        {this.projects()}
+        {/* {this.content()} */}
         <a href="#navID" id="myBtn" title="Go to top">
           Top
         </a>
-        {this.content()}
+        {this.contact()}
         {this.footer()}
       </div>
     );

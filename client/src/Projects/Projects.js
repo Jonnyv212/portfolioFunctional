@@ -59,8 +59,8 @@ class Projects extends Component {
   //Generates a project template for the portfolio function.
   projects = (pjName, pjImage, pjDescription, pjPreview, pjSource) => {
     return (
-      <div className="Pcontainer">
-        <div className="Pcontent">
+      // <div className="Pcontainer">
+        <div className="projectContainer">
           <div className="Pimg">
             <img
               src={pjImage}
@@ -73,7 +73,7 @@ class Projects extends Component {
             <div className="Ptitle">{pjName}</div>
             {pjDescription}
           </div>
-        </div>
+        
 
         <div className="Pbottom">
           <div className="PbottomLinks">
@@ -87,36 +87,38 @@ class Projects extends Component {
               Source
             </a>
           </div>
+
           <div className="Pstacks">
             <ul>
               <li>ReactJS</li>
               <li>JavaScript </li>
             </ul>
           </div>
+
         </div>
-        {/* <hr /> */}
+
       </div>
     );
   };
 
   //Generates a project based on the JSON data.
   //Takes the JSON data and applies it from a loop to the projects function.
-  //   projectLister = () => {
-  //     let pjIndex = PJdata.length;
-  //     let pjFull = [];
-  //     for (let i = 0; i < pjIndex; i++) {
-  //       pjFull.push(
-  //         this.projects(
-  //           PJdata[i].projectName,
-  //           PJdata[i].image,
-  //           PJdata[i].description,
-  //           PJdata[i].preview,
-  //           PJdata[i].source
-  //         )
-  //       );
-  //     }
-  //     console.log(pjFull);
-  //   };
+    // projectLister = () => {
+    //   let pjIndex = PJdata.length;
+    //   let pjFull = [];
+    //   for (let i = 0; i < pjIndex; i++) {
+    //     pjFull.push(
+    //       this.projects(
+    //         PJdata[i].projectName,
+    //         PJdata[i].image,
+    //         PJdata[i].description,
+    //         PJdata[i].preview,
+    //         PJdata[i].source
+    //       )
+    //     );
+    //   }
+    //   return pjFull;
+    // };
 
   test2 = () => {
     let pjName = this.state.data.map(item => item.project_name);
@@ -138,9 +140,8 @@ class Projects extends Component {
 
   render() {
     return (
-      <div className="Projects" id="projects">
-        <h2>PROJECTS</h2>
-        {/* {this.projectLister()} */}
+      <div className="projectContainer">
+        {/* <Fade>{this.projectLister()}</Fade> */}
         <Fade>{this.test2()}</Fade>
       </div>
     );

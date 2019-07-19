@@ -5,16 +5,17 @@
 .Projects h2 {
   text-align: center;
 }
-.Pcontainer {
+.projectContainer {
   /* border: solid black; */
   width: 100%;
-  height: auto;
-  display: inline-block;
+  /* height: auto; */
+  /* display: inline-block; */
   /* padding-top: 20px; */
-  /* padding-bottom: 20px; */
-  box-shadow: 3px 3px 5px 5px #eeeeee;
-  margin: 8px;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 5px 2px #d6d6d6;
+  /* margin: 8px; */
   text-align: center;
+  /* border: solid black 1px; */
 }
 
 .Ptitle {
@@ -27,16 +28,16 @@
   display: inline-block;
 }
 
-.Pcontent {
+/* .projectContainer { */
   /* border: solid black; */
-  width: 100%;
-  height: auto;
+  /* width: 100%; */
+  /* height: auto; */
   /* margin-right: 20px;
       margin-left: 10px;
       margin-bottom: 10px; */
   /* text-align: center; */
-  display: inline-block;
-}
+  /* display: inline-block; */
+/* } */
 
 .Pimg {
   width: 47%;
