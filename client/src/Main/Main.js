@@ -30,7 +30,7 @@ class Main extends Component {
               <i className="fa fa-caret-down" />
             </button>
             <div className="dropdown-content">
-              <a href="http://bit.ly/2M6hWsH" target="_blank">
+              <a href="http://bit.ly/2M6hWsH" target="blank">
                 Preview
               </a>
               <a href="http://bit.ly/2YWKx7l">Download</a>
@@ -61,7 +61,7 @@ class Main extends Component {
         <div className="list">
           <ul>
             <li>
-              <a href="https://github.com/Jonnyv212/"  target="_blank">
+              <a href="https://github.com/Jonnyv212/" target="blank">
                 <img
                   src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/github2.jpg"
                   alt="github"
@@ -69,7 +69,7 @@ class Main extends Component {
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/jvega212" target="_blank">
+              <a href="https://www.linkedin.com/in/jvega212" target="blank">
                 <img
                   src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/linkedin2.png"
                   alt="linkedin"
@@ -79,7 +79,7 @@ class Main extends Component {
             <li>
               <a href="mailto:jonnyv212@hotmail.com?Subject=Hello">
                 <img
-                   src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/Email-icon2.png"
+                  src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/Email-icon2.png"
                   alt="email"
                 />
               </a>
@@ -91,53 +91,59 @@ class Main extends Component {
   };
 
   onSubmit = e => {
-    e.preventDefault()
-    const {name, email, message} = this.state;
+    e.preventDefault();
+    const { name, email, message } = this.state;
     console.log("client: " + name, email, message);
 
     axios.post("/contact", {
       test: name
-    })
+    });
 
     this.setState({
       name: "",
       email: "",
       message: ""
-    })
-    
-  }
+    });
+  };
   change = e => {
     this.setState({
       [e.target.name]: e.target.value
-    })
-  }
+    });
+  };
 
   contact = () => {
     return (
-    <div id="contact">
-    <form className="contact" >
-      <h1>CONTACT ME</h1>
-      <div className="upperContact">
-        <input className="name"
-        name="name"
-        placeholder="Full Name"
-        value={this.state.name}
-        onChange={e => this.change(e)}/>
-        <input className="email"
-        name="email"
-        placeholder="Email Address"
-        value={this.state.email}
-        onChange={e => this.change(e)}/>
+      <div id="contact">
+        <form className="contact">
+          <h1>CONTACT ME</h1>
+          <div className="upperContact">
+            <input
+              className="name"
+              name="name"
+              placeholder="Full Name"
+              value={this.state.name}
+              onChange={e => this.change(e)}
+            />
+            <input
+              className="email"
+              name="email"
+              placeholder="Email Address"
+              value={this.state.email}
+              onChange={e => this.change(e)}
+            />
+          </div>
+          <textarea
+            className="message"
+            name="message"
+            placeholder="Message"
+            value={this.state.message}
+            onChange={e => this.change(e)}
+          />
+          <br />
+          <button onClick={e => this.onSubmit(e)}>Submit</button>
+        </form>
       </div>
-      <textarea className="message"
-      name="message"
-      placeholder="Message"
-      value={this.state.message}
-      onChange={e => this.change(e)}/>
-        <br />
-        <button onClick={e => this.onSubmit(e)}>Submit</button>
-    </form>
-    </div>);
+    );
   };
   content = () => {
     return (
@@ -164,7 +170,7 @@ class Main extends Component {
       <div className="footer">
         <ul>
           <li>
-            <a href="https://github.com/Jonnyv212/"  target="_blank">
+            <a href="https://github.com/Jonnyv212/" target="blank">
               <img
                 src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/github2.jpg"
                 alt="github"
@@ -172,7 +178,7 @@ class Main extends Component {
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/jvega212"  target="_blank">
+            <a href="https://www.linkedin.com/in/jvega212" target="blank">
               <img
                 src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/footer/linkedin2.png"
                 alt="linkedin"

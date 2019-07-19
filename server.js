@@ -22,8 +22,10 @@ queryData = (query, path) => {
   app.get(query, (req, res) => {
     connection.query(path, (err, results) => {
       if (err) {
+        console.log("Error");
         return res.send(err);
       } else {
+        console.log("Data: " + results.rows);
         res.send(results.rows);
       }
     });
@@ -52,7 +54,7 @@ var backendPath = "/skills/backend";
 var otherQuery =
   "SELECT skill_name FROM portfolio.skills " +
   "WHERE portfolio.skills.skill_type = 'Other' ";
-var otherPath = "/skills/backend";
+var otherPath = "/skills/other";
 
 queryData(frontendPath, frontendQuery);
 queryData(backendPath, backendQuery);
@@ -88,9 +90,8 @@ queryData(otherPath, otherQuery);
 
 app.post("/contact", (req, res) => {
   const test = req.body;
-  console.log("server: " + test)
+  console.log("server: " + test);
 });
-
 
 app.get("/projects", (req, res) => {
   connection.query("SELECT * FROM portfolio.projects", (err, results) => {

@@ -15,28 +15,36 @@ class Skills extends Component {
   componentDidMount = () => {
     // Set state of data to complete array (resFull) of data
     // this.setState({ frontend: this.getData("/skills/frontend") });
-    // this.getData("/skills/backend", this.state.backend);
-    // this.getData("/skills/other", this.state.other);
-    console.log(this.state.frontend);
+    this.getData("/skills/frontend", "frontend");
+    this.getData("/skills/backend", "backend");
+    this.getData("/skills/other", "other");
   };
 
-  getData = () => {
+  getData = (path, stateValue) => {
     axios
-      .get("/skills")
+      .get(path)
       .then(response => {
         let res = response.data.length;
         let resFull = [];
         // For every piece of data in the array push it to a resFull.
         for (let i = 0; i < res; i++) {
-          if (i === res - 1) {
-            resFull.push(response.data[i].skill_name);
-          } else {
-            resFull.push(response.data[i].skill_name + ", ");
-          }
+          // if (i === res - 1) {
+          resFull.push(
+            <li>
+              <span>&#10003;</span>
+              {response.data[i].skill_name}
+            </li>
+          );
+          // }
+          // } else {
+          //   resFull.push(response.data[i].skill_name + ", ");
+          // }
         }
+        let list = <ul className="dataUL">{resFull}</ul>;
+        // console.log(list);
         // Set state of data to complete array (resFull) of data
         this.setState({
-          data: resFull
+          [stateValue]: list
         });
       })
       .catch(error => {
