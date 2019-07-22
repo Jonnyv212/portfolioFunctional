@@ -8,6 +8,30 @@ html {
   background-color: rgb(252, 252, 252);
 }
 
+@media only screen and (min-width: 600px) {
+  .mobileMenu{
+    width: 100%;
+    font-size: 40px;
+    color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(0, 0, 0, 0.125);
+    background: rgb(21, 28, 34);
+    position: fixed;
+    z-index: 10;
+    display: inline-block;
+}
+} 
+
+@media only screen and (min-width: 600px) {
+  .nav{
+    display: none;
+  }
+}
+
+.mobileMenu{
+  display: none;
+}
 .nav {
   background: rgb(21, 28, 34);
   width: 100%;

@@ -101,24 +101,65 @@ class Projects extends Component {
     );
   };
 
+  projects2 = (pjName, pjImage, pjDescription, pjPreview, pjSource) => {
+    return (
+      // <div className="Pcontainer">
+        <div className="projectList">
+          <div className="pTitle">
+            {pjName}
+          </div>
+
+          <div className="pImg">
+            <img
+                src={pjImage}
+                alt="pjImage"
+                style={{ boxShadow: "0 1rem 1rem rgba(0, 0, 0, 0.2)" }}
+            />
+            <div className="overlay1">
+              <div className="text">{pjDescription}</div>
+            </div>
+            <div className="overlay2">
+                  <ul className="Pstack">
+                    <li>ReactJS</li>
+                    <li>JavaScript </li>
+                  </ul>
+            </div>
+          </div>
+        
+
+          <div className="PbottomLinks">
+            <a href={pjPreview}>Demo</a>
+
+            <a href={pjSource} target="blank">
+              <img
+                src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/projects/source.png"
+                alt="source"
+              />
+              Source
+            </a>
+          </div>
+      </div>
+    );
+  };
+
   //Generates a project based on the JSON data.
   //Takes the JSON data and applies it from a loop to the projects function.
-    // projectLister = () => {
-    //   let pjIndex = PJdata.length;
-    //   let pjFull = [];
-    //   for (let i = 0; i < pjIndex; i++) {
-    //     pjFull.push(
-    //       this.projects(
-    //         PJdata[i].projectName,
-    //         PJdata[i].image,
-    //         PJdata[i].description,
-    //         PJdata[i].preview,
-    //         PJdata[i].source
-    //       )
-    //     );
-    //   }
-    //   return pjFull;
-    // };
+    projectLister = () => {
+      let pjIndex = PJdata.length;
+      let pjFull = [];
+      for (let i = 0; i < pjIndex; i++) {
+        pjFull.push(
+          this.projects2(
+            PJdata[i].projectName,
+            PJdata[i].image,
+            PJdata[i].description,
+            PJdata[i].preview,
+            PJdata[i].source
+          )
+        );
+      }
+      return pjFull;
+    };
 
   test2 = () => {
     let pjName = this.state.data.map(item => item.project_name);
@@ -141,8 +182,8 @@ class Projects extends Component {
   render() {
     return (
       <div className="projectContainer">
-        {/* <Fade>{this.projectLister()}</Fade> */}
-        <Fade>{this.test2()}</Fade>
+        <Fade>{this.projectLister()}</Fade>
+        {/* <Fade>{this.test2()}</Fade> */}
       </div>
     );
   }

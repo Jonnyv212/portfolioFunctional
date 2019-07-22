@@ -248,6 +248,9 @@ class Main extends Component {
 
     return (
       <div className="main">
+        <div className="mobileMenu">
+            &#9776;
+        </div>
         {this.nav()}
         {this.header()}
         {this.about()}
