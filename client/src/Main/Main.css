@@ -7,9 +7,13 @@ html {
   min-height: 100vh;
   background-color: rgb(252, 252, 252);
 }
+/* 
+.nav {
+  display: none;
+} */
 
 @media only screen and (min-width: 600px) {
-  .mobileMenu{
+  .nav {
     width: 100%;
     font-size: 40px;
     color: white;
@@ -19,28 +23,29 @@ html {
     background: rgb(21, 28, 34);
     position: fixed;
     z-index: 10;
-    display: inline-block;
-}
-} 
-
-@media only screen and (min-width: 600px) {
-  .nav{
-    display: none;
+    /* display: inline-block; */
   }
 }
 
-.mobileMenu{
-  display: none;
-}
-.nav {
+.mobileMenu {
   background: rgb(21, 28, 34);
   width: 100%;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: rgba(0, 0, 0, 0.125);
+  color: white;
+  font-size: 40px;
+  padding-left: 10px;
   position: fixed;
   z-index: 10;
 }
+
+@media only screen and (min-width: 600px) {
+  /* .mobileMenu {
+    display: none;
+  } */
+}
+
 .navName {
   float: left;
   color: white;
@@ -124,19 +129,26 @@ html {
 }
 .headername {
   /* border: solid black; */
-  width: 30%;
+  width: 100%;
   display: inline-block;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  /* border-bottom-color: rgba(0, 0, 0, 0.125); */
   color: white;
-  font-size: 20px;
+  font-size: 30px;
   font-family: "Calibri", Times, serif;
   padding-bottom: 2px;
 }
 
+@media only screen and (min-width: 600px) {
+  .headername {
+    width: 30%;
+  }
+}
+
+.header .list {
+  padding-left: 150px;
+  padding-right: 150px;
+}
 .header li img {
-  width: 60px;
+  width: 100px;
 }
 
 .header li img:hover {
@@ -145,14 +157,14 @@ html {
   transition: all 0.1s ease-in;
 }
 
-#about{
+#about {
   width: 100%;
-  padding-top: 50px;
+  /* padding-top: 50px; */
   padding-bottom: 50px;
   border-bottom: 1px solid rgb(187, 187, 187);
 }
 
-#skills{
+#skills {
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -164,7 +176,7 @@ html {
   text-align: center;
 }
 
-#projects{
+#projects {
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -174,23 +186,22 @@ html {
 
 #projects h1 {
   text-align: center;
-  
 }
 
-
-.content {
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  /* padding-top: 50px; */
-  padding-bottom: 50px;
-  /* display: flex; */
-  /* min-height: 90vh; */
-  /* margin-top: 40px; */
-  /* margin-bottom: 40px; */
-  /* background-color: white; */
+.aboutMe {
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
 }
-
+@media only screen and (min-width: 600px) {
+  .aboutMe {
+    width: 100%;
+    padding-left: 14px;
+    padding-right: 14px;
+    font-size: 20px;
+    text-align: center;
+  }
+}
 
 .footer {
   background: rgb(21, 28, 34);

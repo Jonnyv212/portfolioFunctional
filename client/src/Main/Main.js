@@ -59,6 +59,7 @@ class Main extends Component {
           <p>Software Developer</p>
         </div>
         <div className="list">
+          <hr />
           <ul>
             <li>
               <a href="https://github.com/Jonnyv212/" target="blank">
@@ -147,39 +148,38 @@ class Main extends Component {
   };
 
   about = () => {
-    return(
+    return (
       <div id="about">
-        <div className="content">
+        <div className="aboutMe">
+          <h1>Overview</h1>
           Information Technology professional with 5 years of experience in the
           Education and Healthcare industry. Fast learner able to quickly adapt
           to industry standards, trends, and needs. Passionate about web
           development and learning about new technologies. Searching for the
           right opportunity with a compatible culture.
-          </div>
+        </div>
       </div>
-    )
-  }
+    );
+  };
 
   skills = () => {
-    return(
+    return (
       <div id="skills">
         <h1>Skills</h1>
+        <Skills />
+      </div>
+    );
+  };
+  projects = () => {
+    return (
+      <div id="projects">
+        <h1>Projects</h1>
         <div className="content">
-              <Skills />
+          <Projects />
         </div>
       </div>
-    )
-  }
-  projects = () => {
-    return(
-      <div id="projects">
-      <h1>Projects</h1>
-        <div className="content">
-              <Projects />
-        </div>
-    </div>
-    )
-  }
+    );
+  };
   content = () => {
     return (
       <div className="content">
@@ -248,9 +248,7 @@ class Main extends Component {
 
     return (
       <div className="main">
-        <div className="mobileMenu">
-            &#9776;
-        </div>
+        <div className="mobileMenu">&#9776;</div>
         {this.nav()}
         {this.header()}
         {this.about()}
