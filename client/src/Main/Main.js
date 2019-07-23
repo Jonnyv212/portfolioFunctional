@@ -155,11 +155,11 @@ class Main extends Component {
       <div id="about">
         <div className="aboutMe">
           <h1>Overview</h1>
-          Information Technology professional with 5 years of experience in the
+          <p>Information Technology professional with 5 years of experience in the
           Education and Healthcare industry. Fast learner able to quickly adapt
           to industry standards, trends, and needs. Passionate about web
           development and learning about new technologies. Searching for the
-          right opportunity with a compatible culture.
+          right opportunity with a compatible culture.</p>
         </div>
       </div>
     );
@@ -168,9 +168,9 @@ class Main extends Component {
   skills = () => {
     return (
       <div id="skills">
-        <h1>Skills</h1>
+      <h1>Skills</h1> 
         <Skills />
-      </div>
+        </div>
     );
   };
   projects = () => {
@@ -253,9 +253,9 @@ class Main extends Component {
       <div className="main">
         {this.nav()}
         {this.header()}
-        {/* {this.about()} */}
-        {/* {this.skills()} */}
-        {/* {this.projects()} */}
+        {this.about()}
+        {this.skills()}
+        {this.projects()}
         {/* {this.content()} */}
         <a href="#navID" id="myBtn" title="Go to top">
           Top

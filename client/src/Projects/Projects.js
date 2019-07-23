@@ -103,30 +103,40 @@ class Projects extends Component {
 
   projects2 = (pjName, pjImage, pjDescription, pjPreview, pjSource) => {
     return (
-      // <div className="Pcontainer">
-        <div className="projectList">
+        <div className="project">
           <div className="pTitle">
             {pjName}
           </div>
 
-          <div className="pImg">
+           <div className="pImg">
             <img
                 src={pjImage}
                 alt="pjImage"
                 style={{ boxShadow: "0 1rem 1rem rgba(0, 0, 0, 0.2)" }}
             />
+            <div className="mobileText">
+              {pjDescription}
+            </div>
+            <ul className="mobileStack">
+              <li>ReactJS</li>
+              <li>JavaScript </li>
+            </ul>
+            
+
             <div className="overlay1">
-              <div className="text">{pjDescription}</div>
+              <div className="desktopText">
+                  {pjDescription}
+              </div>
             </div>
             <div className="overlay2">
-                  <ul className="Pstack">
-                    <li>ReactJS</li>
-                    <li>JavaScript </li>
-                  </ul>
-            </div>
-          </div>
-        
+              <ul className="desktopStack">
+                <li>ReactJS</li>
+                <li>JavaScript </li>
+              </ul>
+            </div> 
 
+          </div>
+          
           <div className="PbottomLinks">
             <a href={pjPreview}>Demo</a>
 
@@ -136,7 +146,7 @@ class Projects extends Component {
                 alt="source"
               />
               Source
-            </a>
+            </a> 
           </div>
       </div>
     );
@@ -181,10 +191,9 @@ class Projects extends Component {
 
   render() {
     return (
-      <div className="projectContainer">
+  
         <Fade>{this.projectLister()}</Fade>
-        {/* <Fade>{this.test2()}</Fade> */}
-      </div>
+        /* <Fade>{this.test2()}</Fade> */
     );
   }
 }

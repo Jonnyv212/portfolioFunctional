@@ -1,3 +1,5 @@
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -26,7 +28,7 @@ body{
   /* position: fixed; */
   /* z-index: 10; */
   display: inline-block;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
 }
 .desktopMenu {
   display: none;
@@ -170,12 +172,6 @@ body{
   text-align: center;
 }
 
-@media only screen and (min-width: 994px) {
-  .headername {
-    /* font-size: 30px; */
-  }
-}
-
 .header .list {
   width: 100%;
   text-align: center;
@@ -197,9 +193,35 @@ body{
   border-bottom: 1px solid rgb(187, 187, 187);
 }
 
+.aboutMe {
+  width: 95%;
+  margin: auto;
+  /* padding-left: 14px; */
+  /* padding-right: 14px; */
+  font-size: 18px;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
+  .aboutMe {
+    margin: auto;
+    width: 85%;
+    font-size: 24px;
+  }
+}
+
+@media only screen and (min-width: 994px) {
+  .aboutMe {
+    margin: auto;
+    width: 70%;
+    font-size: 26px;
+  }
+}
+
+
+
 #skills {
   width: 100%;
-  padding-top: 50px;
+  /* padding-top: 50px; */
   padding-bottom: 50px;
   background-color: rgb(247, 247, 247);
   border-bottom: 1px solid rgb(187, 187, 187);
@@ -207,6 +229,10 @@ body{
 
 #skills h1 {
   text-align: center;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size:   50px;
 }
 
 #projects {
@@ -219,21 +245,6 @@ body{
 
 #projects h1 {
   text-align: center;
-}
-
-.aboutMe {
-  width: 100%;
-  font-size: 20px;
-  text-align: center;
-}
-@media only screen and (min-width: 600px) {
-  .aboutMe {
-    width: 100%;
-    padding-left: 14px;
-    padding-right: 14px;
-    font-size: 20px;
-    text-align: center;
-  }
 }
 
 .footer {
