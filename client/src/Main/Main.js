@@ -22,6 +22,8 @@ class Main extends Component {
   nav = () => {
     return (
       <div className="nav">
+        <div className="mobileMenu">&#9776;</div>
+        <div className="desktopMenu">
         <div className="navName">Jonathan Vega</div>
         <ul>
           <li className="dropdown">
@@ -46,6 +48,7 @@ class Main extends Component {
             <a href="#contact">Contact</a>
           </li>
         </ul>
+        </div>
       </div>
     );
   };
@@ -248,17 +251,16 @@ class Main extends Component {
 
     return (
       <div className="main">
-        <div className="mobileMenu">&#9776;</div>
         {this.nav()}
         {this.header()}
-        {this.about()}
-        {this.skills()}
-        {this.projects()}
+        {/* {this.about()} */}
+        {/* {this.skills()} */}
+        {/* {this.projects()} */}
         {/* {this.content()} */}
         <a href="#navID" id="myBtn" title="Go to top">
           Top
         </a>
-        {this.contact()}
+        {/* {this.contact()} */}
         {this.footer()}
       </div>
     );

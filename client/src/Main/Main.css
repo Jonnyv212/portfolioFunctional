@@ -2,48 +2,70 @@ html {
   scroll-behavior: smooth;
 }
 
+body{
+  margin:0;
+  padding:0;
+}
+
 .main {
-  min-width: 100vh;
-  min-height: 100vh;
+  /* min-width: 100vh;
+  min-height: 100vh; */
+  width: 100%;
+  /* height: auto; */
   background-color: rgb(252, 252, 252);
 }
-/* 
-.nav {
-  display: none;
-} */
 
-@media only screen and (min-width: 600px) {
-  .nav {
-    width: 100%;
+.nav{
+  width: 100%;
+  font-size: 40px;
+  color: white;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(0, 0, 0, 0.125);
+  background: rgb(21, 28, 34);
+  /* position: fixed; */
+  /* z-index: 10; */
+  display: inline-block;
+  padding-bottom: 20px;
+}
+.desktopMenu {
+  display: none;
+}
+
+@media only screen and (min-width: 994px) {
+  .desktopMenu {
+    /* width: 100%;
     font-size: 40px;
     color: white;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: rgba(0, 0, 0, 0.125);
-    background: rgb(21, 28, 34);
-    position: fixed;
-    z-index: 10;
-    /* display: inline-block; */
+    background: rgb(21, 28, 34); */
+    /* position: fixed; */
+    /* z-index: 10; */
+    display: inline-block;
+    width: 100%;
+    /* padding-bottom: 20px; */
   }
 }
 
 .mobileMenu {
-  background: rgb(21, 28, 34);
+  /* background: rgb(21, 28, 34); */
   width: 100%;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: rgba(0, 0, 0, 0.125);
-  color: white;
-  font-size: 40px;
+  /* border-bottom-style: solid; */
+  /* border-bottom-width: 1px; */
+  /* border-bottom-color: rgba(0, 0, 0, 0.125); */
+  /* color: white; */
+  font-size: 50px;
   padding-left: 10px;
-  position: fixed;
+  /* position: fixed; */
   z-index: 10;
 }
 
-@media only screen and (min-width: 600px) {
-  /* .mobileMenu {
+@media only screen and (min-width: 994px) {
+  .mobileMenu {
     display: none;
-  } */
+  }
 }
 
 .navName {
@@ -54,7 +76,7 @@ html {
   padding: 20px 24px;
 }
 
-.nav ul {
+.desktopMenu ul {
   list-style-type: none;
   margin: 0;
   padding: auto;
@@ -63,11 +85,11 @@ html {
   float: right;
 }
 
-.nav li {
+.desktopMenu li {
   display: inline-block;
 }
 
-.nav li a {
+.desktopMenu li a {
   display: block;
   text-align: center;
   padding: 20px 24px;
@@ -78,7 +100,7 @@ html {
 }
 
 /* Change the link color to #111 (black) on hover */
-.nav li a:hover {
+.desktopMenu li a:hover {
   color: white;
   border-bottom-style: solid;
   border-bottom-width: 2px;
@@ -86,7 +108,9 @@ html {
 }
 
 .header {
+  /* width: 467px; */
   width: 100%;
+  height: auto;
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: rgba(0, 0, 0, 0.125);
@@ -94,16 +118,24 @@ html {
   border-bottom-width: 1px;
   border-bottom-color: rgba(0, 0, 0, 0.125);
   background-color: rgb(137, 190, 211);
-
-  text-align: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  /* text-align: center; */
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), */
   background-image: url("https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/banner.jpg");
   background-size: cover;
-  padding-top: 100px;
-  padding-bottom: 35px;
+/* margin-top: 30px; */
 
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
 }
+
+@media only screen and (min-width: 994px) {
+  .header {
+    /* padding-top: 30px; */
+  }
+}
+
 
 .header li {
   display: inline-block;
@@ -132,23 +164,24 @@ html {
   width: 100%;
   display: inline-block;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   font-family: "Calibri", Times, serif;
   padding-bottom: 2px;
+  text-align: center;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 994px) {
   .headername {
-    width: 30%;
+    /* font-size: 30px; */
   }
 }
 
 .header .list {
-  padding-left: 150px;
-  padding-right: 150px;
+  width: 100%;
+  text-align: center;
 }
 .header li img {
-  width: 100px;
+  width: 70px;
 }
 
 .header li img:hover {
@@ -210,6 +243,7 @@ html {
   height: 100%;
 }
 
+
 .footer ul {
   margin-top: 2px;
   margin-bottom: 2px;
@@ -226,6 +260,12 @@ html {
 }
 .footer li img {
   width: 30px;
+}
+
+@media only screen and (min-width: 600px) {
+  .footer li img {
+    width: 55px;
+  }
 }
 
 .dropdown .dropbtn {
