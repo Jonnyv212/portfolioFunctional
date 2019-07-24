@@ -108,35 +108,33 @@ class Projects extends Component {
             {pjName}
           </div>
 
-           <div className="pImg">
-            <img
-                src={pjImage}
-                alt="pjImage"
-                style={{ boxShadow: "0 1rem 1rem rgba(0, 0, 0, 0.2)" }}
-            />
-            <div className="mobileText">
-              {pjDescription}
-            </div>
-            <ul className="mobileStack">
-              <li>ReactJS</li>
-              <li>JavaScript </li>
-            </ul>
-            
-
-            <div className="overlay1">
-              <div className="desktopText">
-                  {pjDescription}
+          <div className="pImg">
+              <img
+                  className="image"
+                  src={pjImage}
+                  alt="pjImage"
+                  style={{ boxShadow: "0 1rem 1rem rgba(0, 0, 0, 0.2)" }}
+              />
+          
+              <div className="overlay1">
+                <div className="desktopText">
+                    {pjDescription}
+                </div>
               </div>
-            </div>
-            <div className="overlay2">
-              <ul className="desktopStack">
+              <div className="overlay2">
+                <ul className="desktopStack">
+                  <li>ReactJS</li>
+                  <li>JavaScript </li>
+                </ul>
+              </div> 
+          </div>
+          <div className="mobileText">
+                {pjDescription}
+              </div>
+              <ul className="mobileStack">
                 <li>ReactJS</li>
                 <li>JavaScript </li>
               </ul>
-            </div> 
-
-          </div>
-          
           <div className="PbottomLinks">
             <a href={pjPreview}>Demo</a>
 
