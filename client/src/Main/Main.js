@@ -260,7 +260,7 @@ class Main extends Component {
         <a href="#navID" id="myBtn" title="Go to top">
           Top
         </a>
-        {/* {this.contact()} */}
+        {this.contact()}
         {this.footer()}
       </div>
     );
