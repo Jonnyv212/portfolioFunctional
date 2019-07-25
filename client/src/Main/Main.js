@@ -22,32 +22,46 @@ class Main extends Component {
   nav = () => {
     return (
       <div className="nav">
-        <div className="mobileMenu">&#9776;</div>
-        <div className="desktopMenu">
-        <div className="navName">Jonathan Vega</div>
-        <ul>
-          <li className="dropdown">
-            <button className="dropbtn">
-              Resume
-              <i className="fa fa-caret-down" />
-            </button>
+        <div className="mobileMenu">
+          <button className="dropbtn">
+            &#9776;
             <div className="dropdown-content">
-              <a href="http://bit.ly/2M6hWsH" target="blank">
-                Preview
-              </a>
-              <a href="http://bit.ly/2YWKx7l">Download</a>
+              <a href="http://bit.ly/2M6hWsH" target="blank">Resume</a>
+              <a href="#about">About</a>
+              <a href="#projects">Projects</a>
+              <a href="#contact">Contact</a>
             </div>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
+          </button>
+        </div>
+
+        <div className="desktopMenu">
+            <div className="navName">
+              Jonathan Vega
+            </div>
+            <ul>
+              <li className="dropdown">
+                <button className="dropbtn">
+                  Resume
+                  <i className="fa fa-caret-down" />
+                </button>
+                <div className="dropdown-content">
+                    <a href="http://bit.ly/2M6hWsH" target="blank">
+                      Preview
+                    </a>
+                    <a href="http://bit.ly/2YWKx7l">Download</a>
+                  </div>
+              </li>
+
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#projects">Projects</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
         </div>
       </div>
     );

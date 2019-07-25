@@ -101,7 +101,7 @@ class Projects extends Component {
     );
   };
 
-  projects2 = (pjName, pjImage, pjDescription, pjPreview, pjSource) => {
+  projectsJSON = (pjName, pjImage, pjDescription, pjPreview, pjSource) => {
     return (
         <div className="project">
           <div className="pTitle">
@@ -152,12 +152,12 @@ class Projects extends Component {
 
   //Generates a project based on the JSON data.
   //Takes the JSON data and applies it from a loop to the projects function.
-    projectLister = () => {
-      let pjIndex = PJdata.length;
+    projectListJSON = () => {
+      let pjIndexJSON = PJdata.length;
       let pjFull = [];
-      for (let i = 0; i < pjIndex; i++) {
+      for (let i = 0; i < pjIndexJSON; i++) {
         pjFull.push(
-          this.projects2(
+          this.projectsJSON(
             PJdata[i].projectName,
             PJdata[i].image,
             PJdata[i].description,
@@ -169,7 +169,7 @@ class Projects extends Component {
       return pjFull;
     };
 
-  test2 = () => {
+  projectListPG = () => {
     let pjName = this.state.data.map(item => item.project_name);
     let pjImage = this.state.data.map(item => item.project_image);
     let pjDesc = this.state.data.map(item => item.project_description);
@@ -187,10 +187,18 @@ class Projects extends Component {
     return pjFull;
   };
 
+    findProjects = () => {
+      if(this.state.data){
+        return this.projectListPG();
+      }
+      else{
+        return this.projectListJSON();
+      }
+    }
   render() {
     return (
   
-        <Fade>{this.projectLister()}</Fade>
+        <Fade>{this.findProjects()}</Fade>
         /* <Fade>{this.test2()}</Fade> */
     );
   }
