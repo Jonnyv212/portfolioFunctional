@@ -197,8 +197,8 @@ class Projects extends Component {
     }
   render() {
     return (
-  
-        <Fade>{this.findProjects()}</Fade>
+        <Fade>{this.projectListJSON()}</Fade>
+        // <Fade>{this.findProjects()}</Fade>
         /* <Fade>{this.test2()}</Fade> */
     );
   }
