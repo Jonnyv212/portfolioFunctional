@@ -73,7 +73,7 @@ class Main extends Component {
       <div className="header">
         <div className="headername">
           <h1>Jonathan Vega</h1>
-          <p>Software Developer</p>
+          <span>Software Developer</span>
         </div>
         <div className="list">
           <hr />

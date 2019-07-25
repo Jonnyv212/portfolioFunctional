@@ -13,11 +13,16 @@
   margin: auto;
   /* box-sizing: border-box; */
   background-color: rgb(247, 247, 247);
-  /* display: flex; */
 }
 
+@media only screen and (min-width: 992px) {
+    .skillContainer{
+    display: flex;
+  }
+}
 .skillBlock {
   width: 95%;
+  height: auto;
   margin: auto;
   text-align: center;
   /* display: inline-block; */
@@ -35,7 +40,8 @@
     /* margin: auto; */
     margin-right: 10px;
     margin-left: 10px;
-    width: 31%;
+    width: 33%;
+    height: 500px;
     font-size: 26px;
     display: inline-block;
   }
