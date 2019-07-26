@@ -11,6 +11,13 @@
     "image": "https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/projects/cnecentral_preview.png",
     "description": "CNE Central description",
     "preview": "Preview",
-    "source": "https://github.com/kuribelle/CNECENTRAL"
+    "source": "https://github.com/jonnyv212/CNECENTRAL"
+  },
+  {
+    "projectName": "InventoryJS",
+    "image": "https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/projects/inventoryImage.PNG",
+    "description": "Inventory JS description",
+    "preview": "Preview",
+    "source": "https://github.com/Jonnyv212/InventoryJS"
   }
 ]

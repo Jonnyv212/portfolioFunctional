@@ -51,6 +51,9 @@
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px; */
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(0, 0, 0, 0.125);   
 }
 .pImg img {
   width: 100%;

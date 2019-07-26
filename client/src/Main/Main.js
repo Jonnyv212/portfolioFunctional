@@ -38,16 +38,13 @@ class Main extends Component {
 
         <div className="desktopMenu">
           <div className="navName">Jonathan Vega</div>
+
+          
           <ul>
-            <li className="dropdown">
-              <button className="dropbtn">
-                Resume
-                <i className="fa fa-caret-down" />
-              </button>
-              <div className="dropdown-content">
-                <a href="http://bit.ly/2M6hWsH" target="blank">
-                  Preview
-                </a>
+            <li className="desktopDropdown">
+              <a className="desktopDropbtn">Resume</a>
+              <div className="desktopDropdown-content">
+                <a href="http://bit.ly/2M6hWsH" target="blank">Preview</a>
                 <a href="http://bit.ly/2YWKx7l">Download</a>
               </div>
             </li>
