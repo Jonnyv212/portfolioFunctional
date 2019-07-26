@@ -1,12 +1,10 @@
-
-
 html {
   scroll-behavior: smooth;
 }
 
-body{
-  margin:0;
-  padding:0;
+body {
+  margin: 0;
+  padding: 0;
 }
 
 .main {
@@ -17,7 +15,7 @@ body{
   background-color: rgb(252, 252, 252);
 }
 
-.nav{
+.nav {
   width: 100%;
   height: 75px;
   font-size: 40px;
@@ -59,7 +57,7 @@ body{
   /* border-bottom-color: rgba(0, 0, 0, 0.125); */
   /* color: white; */
   font-size: 50px;
-  padding-left: 10px;
+  /* padding-left: 10px; */
   /* position: fixed; */
   z-index: 10;
 }
@@ -126,7 +124,6 @@ body{
   color: black;
 }
 
-
 .dropdown-content {
   display: none;
   position: absolute;
@@ -162,7 +159,6 @@ body{
   }
 }
 
-
 .header {
   /* width: 467px; */
   width: 100%;
@@ -181,20 +177,14 @@ body{
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), */
   background-image: url("https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/header/banner.jpg");
   background-size: cover;
-/* margin-top: 30px; */
+  /* margin-top: 30px; */
 
   color: white;
   font-size: 20px;
-  text-shadow:
-      0.07em 0 black,
-      0 0.07em black,
-      -0.07em 0 black,
-      0 -0.07em black;
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
 
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
 }
-
-
 
 .header ul {
   /* border: solid black; */
@@ -238,7 +228,6 @@ body{
   }
 }
 
-
 .header .list {
   width: 100%;
   text-align: center;
@@ -258,8 +247,6 @@ body{
   /* padding-top: 50px; */
   padding-bottom: 50px;
   border-bottom: 1px solid rgb(187, 187, 187);
-
-  
 }
 
 .aboutMe {
@@ -286,8 +273,6 @@ body{
   }
 }
 
-
-
 #skills {
   width: 100%;
   /* padding-top: 50px; */
@@ -301,7 +286,7 @@ body{
   margin: 0;
   padding-top: 20px;
   padding-bottom: 20px;
-  font-size:   50px;
+  font-size: 50px;
 }
 
 #projects {
@@ -322,7 +307,6 @@ body{
   width: 100%;
   height: 100%;
 }
-
 
 .footer ul {
   margin-top: 2px;
@@ -348,8 +332,7 @@ body{
   }
 }
 
-
-#contact{
+#contact {
   width: 100%;
 }
 .contactContainer {
@@ -372,8 +355,7 @@ body{
   }
 }
 
-
-.contactContainer h1{
+.contactContainer h1 {
   text-align: center;
 }
 
@@ -407,7 +389,6 @@ body{
     margin-right: 5%;
   }
 }
-
 
 .upperContact .email {
   width: 100%;
@@ -447,7 +428,6 @@ body{
     width: 50%;
   }
 } */
-
 
 #myBtn {
   display: none; /* Hidden by default */

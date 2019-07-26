@@ -16,7 +16,7 @@
 }
 
 @media only screen and (min-width: 992px) {
-    .skillContainer{
+  .skillContainer {
     display: flex;
   }
 }
@@ -28,8 +28,8 @@
   /* display: inline-block; */
   background-color: white;
   box-shadow: 3px 3px 5px 5px #eeeeee;
-   margin-bottom: 30px;
-   padding-bottom: 10px;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
   /* margin-left: 70px;
   margin-right: 70px;
   margin-bottom: 50px; */
@@ -64,7 +64,6 @@
     font-size: 30px;
   }
 }
-
 
 .skillName {
   width: 100%;

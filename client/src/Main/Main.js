@@ -26,7 +26,9 @@ class Main extends Component {
           <button className="dropbtn">
             &#9776;
             <div className="dropdown-content">
-              <a href="http://bit.ly/2M6hWsH" target="blank">Resume</a>
+              <a href="http://bit.ly/2M6hWsH" target="blank">
+                Resume
+              </a>
               <a href="#about">About</a>
               <a href="#projects">Projects</a>
               <a href="#contact">Contact</a>
@@ -35,33 +37,31 @@ class Main extends Component {
         </div>
 
         <div className="desktopMenu">
-            <div className="navName">
-              Jonathan Vega
-            </div>
-            <ul>
-              <li className="dropdown">
-                <button className="dropbtn">
-                  Resume
-                  <i className="fa fa-caret-down" />
-                </button>
-                <div className="dropdown-content">
-                    <a href="http://bit.ly/2M6hWsH" target="blank">
-                      Preview
-                    </a>
-                    <a href="http://bit.ly/2YWKx7l">Download</a>
-                  </div>
-              </li>
+          <div className="navName">Jonathan Vega</div>
+          <ul>
+            <li className="dropdown">
+              <button className="dropbtn">
+                Resume
+                <i className="fa fa-caret-down" />
+              </button>
+              <div className="dropdown-content">
+                <a href="http://bit.ly/2M6hWsH" target="blank">
+                  Preview
+                </a>
+                <a href="http://bit.ly/2YWKx7l">Download</a>
+              </div>
+            </li>
 
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#projects">Projects</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
       </div>
     );
@@ -169,11 +169,13 @@ class Main extends Component {
       <div id="about">
         <div className="aboutMe">
           <h1>Overview</h1>
-          <p>Information Technology professional with 5 years of experience in the
-          Education and Healthcare industry. Fast learner able to quickly adapt
-          to industry standards, trends, and needs. Passionate about web
-          development and learning about new technologies. Searching for the
-          right opportunity with a compatible culture.</p>
+          <p>
+            Information Technology professional with 5 years of experience in
+            the Education and Healthcare industry. Fast learner able to quickly
+            adapt to industry standards, trends, and needs. Passionate about web
+            development and learning about new technologies. Searching for the
+            right opportunity with a compatible culture.
+          </p>
         </div>
       </div>
     );
@@ -182,9 +184,9 @@ class Main extends Component {
   skills = () => {
     return (
       <div id="skills">
-      <h1>Skills</h1> 
+        <h1>Skills</h1>
         <Skills />
-        </div>
+      </div>
     );
   };
   projects = () => {
