@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Projects from "../Projects/Projects.js";
 import Skills from "../Skills/Skills.js";
+import Contact from "../Contact/Contact.js";
 import "./Main.css";
 import "./Menu.css";
 import "./Header.css";
@@ -175,46 +176,54 @@ class Main extends Component {
   //   );
   // };
 
-  change = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
+  // change = e => {
+  //   this.setState({
+  //     [e.target.name]: e.target.value
+  //   });
+  // };
+
+  // contactOld = () => {
+  //   return (
+  //     <div id="contact">
+  //       <form className="contactContainer">
+  //         <h1>CONTACT ME</h1>
+  //         <div className="upperContact">
+  //           <input
+  //             type="text"
+  //             className="name"
+  //             name="name"
+  //             placeholder="Full Name"
+  //             value={this.state.name}
+  //             // onChange={e => this.change(e)}
+  //           />
+  //           <input
+  //             type="email"
+  //             className="email"
+  //             name="email"
+  //             placeholder="Email Address"
+  //             value={this.state.email}
+  //             // onChange={e => this.change(e)}
+  //           />
+  //         </div>
+  //         <textarea
+  //           type="submit"
+  //           className="message"
+  //           name="message"
+  //           placeholder="Message"
+  //           value={this.state.message}
+  //           // onChange={e => this.change(e)}
+  //         />
+  //         <br />
+  //         <button onClick={e => this.onSubmit(e)}>Submit</button>
+  //       </form>
+  //     </div>
+  //   );
+  // };
 
   contact = () => {
     return (
       <div id="contact">
-        <form className="contactContainer">
-          <h1>CONTACT ME</h1>
-          <div className="upperContact">
-            <input
-              type="text"
-              className="name"
-              name="name"
-              placeholder="Full Name"
-              value={this.state.name}
-              // onChange={e => this.change(e)}
-            />
-            <input
-              type="email"
-              className="email"
-              name="email"
-              placeholder="Email Address"
-              value={this.state.email}
-              // onChange={e => this.change(e)}
-            />
-          </div>
-          <textarea
-            type="submit"
-            className="message"
-            name="message"
-            placeholder="Message"
-            value={this.state.message}
-            // onChange={e => this.change(e)}
-          />
-          <br />
-          <button onClick={e => this.onSubmit(e)}>Submit</button>
-        </form>
+        <Contact />
       </div>
     );
   };
@@ -279,6 +288,7 @@ class Main extends Component {
         <a href="#about" id="myBtn" title="Go to top">
           Top
         </a>
+        {/* {this.contactOld()} */}
         {this.contact()}
         {this.footer()}
       </div>
