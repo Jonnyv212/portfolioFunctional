@@ -1,0 +1,80 @@
+#contact {
+  width: 100%;
+}
+.contactContainer {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  /* padding-top: 50px; */
+  padding-bottom: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+  .contactContainer {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .contactContainer {
+    width: 50%;
+  }
+}
+
+.contactContainer h1 {
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .contactContainer h1 {
+    font-size: 50px;
+  }
+}
+.upperContact {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.upperContact .name {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 2px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 992px) {
+  .upperContact .name {
+    width: 45%;
+    margin-right: 5%;
+  }
+}
+
+.upperContact .email {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+@media only screen and (min-width: 992px) {
+  .upperContact .email {
+    width: 45%;
+    margin-left: 4%;
+  }
+}
+
+.contactContainer .message {
+  width: 100%;
+  height: 100px;
+  padding: 12px 20px;
+  margin: 8px 2px;
+  /* display: inline-block; */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: none;
+}
