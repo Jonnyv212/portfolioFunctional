@@ -46,7 +46,7 @@
   list-style-type: none;
   margin: 0;
   padding: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
   /* background-color: #333; */
   float: right;
 }

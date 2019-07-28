@@ -1,17 +1,9 @@
 .project {
   /* border: solid black; */
   width: 100%;
-  /* height: auto; */
-  /* display: inline-block; */
-  /* padding-top: 20px; */
   margin-bottom: 20px;
   margin-right: 20px;
   box-shadow: 3px 3px 5px 2px #d6d6d6;
-  /* margin: 8px; */
-  /* text-align: center; */
-  /* border: solid black 1px; */
-  /* position: relative; */
-  /* display: inline-block; */
 }
 
 @media only screen and (min-width: 992px) {
@@ -31,29 +23,13 @@
   display: inline-block;
 }
 
-/* .projectContainer { */
-/* border: solid black; */
-/* width: 100%; */
-/* height: auto; */
-/* margin-right: 20px;
-      margin-left: 10px;
-      margin-bottom: 10px; */
-/* text-align: center; */
-/* display: inline-block; */
-/* } */
-
 .pImg {
   width: 100%;
   height: 100%;
   position: relative;
-  /* height: 100%; */
-  /* display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px; */
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: rgba(0, 0, 0, 0.125);   
+  border-bottom-color: rgba(0, 0, 0, 0.125);
 }
 .pImg img {
   width: 100%;
@@ -110,11 +86,7 @@
     opacity: 0.9;
   }
 }
-/* .pImg img:hover {
-  transform: scale(1.1);
-  position: relative;
-  transition: all 0.1s ease-in;
-}  */
+
 .desktopText {
   display: none;
 }
@@ -123,16 +95,13 @@
   .desktopText {
     color: white;
     font-size: 24px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    /* text-align: center; */
+    width: 90%;
+    height: 70%;
     display: inline-block;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    margin-left: 35px;
+    margin-right: 35px;
   }
 }
 
@@ -216,14 +185,19 @@
   text-align: center;
 }
 .PbottomLinks a {
-  /* padding-left: 10%;
-      padding-right: 5%; */
   width: 50%;
+  height: 50px;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  padding-top: 10px;
   display: inline-block;
-  /* border-radius: 50%; */
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
 }
-.PbottomLinks a img {
-  width: 25px;
-  height: auto;
-  display: inline-block;
+
+.PbottomLinks a:hover {
+  background-color: #4caf50; /* Green */
+  color: white;
 }

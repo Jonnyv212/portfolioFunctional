@@ -60,10 +60,6 @@ class Projects extends Component {
           <a href={pjPreview}>Demo</a>
 
           <a href={pjSource} target="blank">
-            <img
-              src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/projects/source.png"
-              alt="source"
-            />
             Source
           </a>
         </div>
