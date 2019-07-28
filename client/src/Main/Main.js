@@ -274,7 +274,7 @@ class Main extends Component {
         {this.about()}
         {this.skills()}
         {this.projects()}
-        <a href="#menuID" id="myBtn" title="Go to top">
+        <a href="#about" id="myBtn" title="Go to top">
           Top
         </a>
         {this.contact()}

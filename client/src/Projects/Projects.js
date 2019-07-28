@@ -46,15 +46,23 @@ class Projects extends Component {
           </div>
           <div className="overlay2">
             <ul className="desktopStack">
+              <li>NodeJS</li>
               <li>ReactJS</li>
-              <li>JavaScript </li>
+              <li>JavaScript</li>
+              <li>PostgreSQL</li>
+              <li>Axios</li>
+              <li>Express</li>
             </ul>
           </div>
         </div>
         <div className="mobileText">{pjDescription}</div>
         <ul className="mobileStack">
+          <li>NodeJS</li>
           <li>ReactJS</li>
-          <li>JavaScript </li>
+          <li>JavaScript</li>
+          <li>PostgreSQL</li>
+          <li>Axios</li>
+          <li>Express</li>
         </ul>
         <div className="PbottomLinks">
           <a href={pjPreview}>Demo</a>
