@@ -45,7 +45,6 @@ class Main extends Component {
                 <a href="http://bit.ly/2M6hWsH" target="blank">
                   Preview
                 </a>
-                <a href="http://bit.ly/2YWKx7l">Download</a>
               </div>
             </li>
 
@@ -185,10 +184,15 @@ class Main extends Component {
   contact = () => {
     return (
       <div id="contact">
-        <form className="contactContainer">
+        <form
+          className="contactContainer"
+          action="https://formspree.io/jonnyv212@hotmail.com"
+          method="POST"
+        >
           <h1>CONTACT ME</h1>
           <div className="upperContact">
             <input
+              type="text"
               className="name"
               name="name"
               placeholder="Full Name"
@@ -196,14 +200,16 @@ class Main extends Component {
               onChange={e => this.change(e)}
             />
             <input
+              type="email"
               className="email"
-              name="email"
+              name="_replyto"
               placeholder="Email Address"
               value={this.state.email}
               onChange={e => this.change(e)}
             />
           </div>
           <textarea
+            type="submit"
             className="message"
             name="message"
             placeholder="Message"
