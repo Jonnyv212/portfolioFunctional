@@ -16,64 +16,23 @@ class Projects extends Component {
     this.getData();
   };
 
+  //Make an API request to the server to retrieve queried data from the PG DB.
   getData = () => {
     axios.get("/projects").then(response => {
       let res = response.data.length;
       let resFull = [];
       // For every piece of data in the array push it to a resFull.
       for (let i = 0; i < res; i++) {
-        if (i === res - 1) {
-          resFull.push(response.data[i]);
-        } else {
-          resFull.push(response.data[i]);
-        }
+        resFull.push(response.data[i]);
       }
-      // Set state of data to complete array (resFull) of data
+      // Set the data state to array after pushing data to resFull[].
       this.setState({
         data: resFull
       });
     });
   };
 
-  //Generates a project template for the portfolio function.
-  // projects = (pjName, pjImage, pjDescription, pjPreview, pjSource) => {
-  //   return (
-  //     // <div className="Pcontainer">
-  //     <div className="projectContainer">
-  //       <div className="pImg">
-  //         <img src={pjImage} alt="pjImage" />
-  //       </div>
-
-  //       <div className="Pinfo">
-  //         <div className="Ptitle">{pjName}</div>
-  //         {pjDescription}
-  //       </div>
-
-  //       <div className="Pbottom">
-  //         <div className="PbottomLinks">
-  //           <a href={pjPreview}>Demo</a>
-
-  //           <a href={pjSource} target="blank">
-  //             <img
-  //               src="https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/projects/source.png"
-  //               alt="source"
-  //             />
-  //             Source
-  //           </a>
-  //         </div>
-
-  //         <div className="Pstacks">
-  //           <ul>
-  //             <li>ReactJS</li>
-  //             <li>JavaScript </li>
-  //           </ul>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // };
-
-  //Generates a project template for the portfolio function.
+  //Generates a project template function. Parameters receive data for the output html.
   projects = (pjName, pjImage, pjDescription, pjPreview, pjSource) => {
     return (
       <div className="project">
@@ -131,6 +90,8 @@ class Projects extends Component {
     return pjFull;
   };
 
+  //Generates a project based on the data response from the DB.
+  //Takes the data and applies it from this function to the projects function.
   projectListPG = () => {
     let pjName = this.state.data.map(item => item.project_name);
     let pjImage = this.state.data.map(item => item.project_image);
@@ -140,15 +101,18 @@ class Projects extends Component {
     let dataIndex = this.state.data.length;
     let pjFull = [];
 
+    //Generate every project from state data.
     for (let i = 0; i < dataIndex; i++) {
       pjFull.push(
         this.projects(pjName[i], pjImage[i], pjDesc[i], pjPrev[i], pjSource[i])
       );
     }
-    // console.log(pjImage[1]);
     return pjFull;
   };
 
+  //Function that returns the generated projects. Determines the source of projects.
+  //If state data is found, generate projects based on database data.
+  //Else, generate from local JSON data.
   findProjects = () => {
     if (this.state.data.length > 0) {
       return this.projectListPG();
@@ -157,11 +121,7 @@ class Projects extends Component {
     }
   };
   render() {
-    return (
-      // <Fade>{this.projectListJSON()}</Fade>
-      <Fade>{this.findProjects()}</Fade>
-      /* <Fade>{this.test2()}</Fade> */
-    );
+    return <Fade>{this.findProjects()}</Fade>;
   }
 }
 export default Projects;

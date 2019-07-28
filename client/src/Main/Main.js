@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import Projects from "../Projects/Projects.js";
 import Skills from "../Skills/Skills.js";
-// import ".\client\Email-icon.png"
 import "./Main.css";
+import "./Menu.css";
+import "./Header.css";
+import "./Footer.css";
 import axios from "axios";
 
 class Main extends Component {
@@ -16,12 +18,10 @@ class Main extends Component {
     };
   }
 
-  // componentDidMount() {}
-
-  //Navigation bar at the top of the page. Fixed positioning
-  nav = () => {
+  //Navigation bar at the top of the page. Swaps between mobileMenu and desktopMenu.
+  menu = () => {
     return (
-      <div className="nav">
+      <div className="menu">
         <div className="mobileMenu">
           <button className="dropbtn">
             &#9776;
@@ -37,7 +37,7 @@ class Main extends Component {
         </div>
 
         <div className="desktopMenu">
-          <div className="navName">Jonathan Vega</div>
+          <div className="menuName">Jonathan Vega</div>
           <ul>
             <li className="dropdown">
               <button className="dropbtn">
@@ -67,7 +67,7 @@ class Main extends Component {
     );
   };
 
-  //Header below the nav
+  //Header below the menu.
   header = () => {
     return (
       <div className="header">
@@ -123,6 +123,62 @@ class Main extends Component {
       message: ""
     });
   };
+
+  about = () => {
+    return (
+      <div id="about">
+        <div className="aboutMe">
+          <h1>Overview</h1>
+          <p>
+            Information Technology professional with 5 years of experience in
+            the Education and Healthcare industry. Fast learner able to quickly
+            adapt to industry standards, trends, and needs. Passionate about web
+            development and learning about new technologies. Searching for the
+            right opportunity with a compatible culture.
+          </p>
+        </div>
+      </div>
+    );
+  };
+
+  //Gets components from Skills/Skills.js
+  skills = () => {
+    return (
+      <div id="skills">
+        <h1>Skills</h1>
+        <Skills />
+      </div>
+    );
+  };
+
+  //Gets components from Projects/Projects.js
+  projects = () => {
+    return (
+      <div id="projects">
+        <h1>Projects</h1>
+        <div className="content">
+          <Projects />
+        </div>
+      </div>
+    );
+  };
+  // content = () => {
+  //   return (
+  //     <div className="content">
+  //       <div id="about">
+  //         Information Technology professional with 5 years of experience in the
+  //         Education and Healthcare industry. Fast learner able to quickly adapt
+  //         to industry standards, trends, and needs. Passionate about web
+  //         development and learning about new technologies. Searching for the
+  //         right opportunity with a compatible culture.
+  //         <Skills />
+  //         <Projects />
+  //         {this.contact()}
+  //       </div>
+  //     </div>
+  //   );
+  // };
+
   change = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -164,58 +220,7 @@ class Main extends Component {
     );
   };
 
-  about = () => {
-    return (
-      <div id="about">
-        <div className="aboutMe">
-          <h1>Overview</h1>
-          <p>
-            Information Technology professional with 5 years of experience in
-            the Education and Healthcare industry. Fast learner able to quickly
-            adapt to industry standards, trends, and needs. Passionate about web
-            development and learning about new technologies. Searching for the
-            right opportunity with a compatible culture.
-          </p>
-        </div>
-      </div>
-    );
-  };
-
-  skills = () => {
-    return (
-      <div id="skills">
-        <h1>Skills</h1>
-        <Skills />
-      </div>
-    );
-  };
-  projects = () => {
-    return (
-      <div id="projects">
-        <h1>Projects</h1>
-        <div className="content">
-          <Projects />
-        </div>
-      </div>
-    );
-  };
-  content = () => {
-    return (
-      <div className="content">
-        <div id="about">
-          Information Technology professional with 5 years of experience in the
-          Education and Healthcare industry. Fast learner able to quickly adapt
-          to industry standards, trends, and needs. Passionate about web
-          development and learning about new technologies. Searching for the
-          right opportunity with a compatible culture.
-          <Skills />
-          <Projects />
-          {this.contact()}
-        </div>
-      </div>
-    );
-  };
-
+  //Footer at the bottom of the page.
   footer = () => {
     return (
       <div className="footer">
@@ -267,13 +272,12 @@ class Main extends Component {
 
     return (
       <div className="main">
-        {this.nav()}
+        {this.menu()}
         {this.header()}
         {this.about()}
         {this.skills()}
         {this.projects()}
-        {/* {this.content()} */}
-        <a href="#navID" id="myBtn" title="Go to top">
+        <a href="#menuID" id="myBtn" title="Go to top">
           Top
         </a>
         {this.contact()}
