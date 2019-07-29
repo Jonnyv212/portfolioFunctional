@@ -129,9 +129,10 @@ class Main extends Component {
           <p>
             Information Technology professional with 5 years of experience in
             the Education and Healthcare industry. Fast learner able to quickly
-            adapt to industry standards, trends, and needs. Passionate about web
-            development and learning about new technologies. Searching for the
-            right opportunity with a compatible culture.
+            adapt to industry standards, trends, and needs. Self-taught and
+            passionate about web development and learning about new
+            technologies. Searching for the right opportunity with a compatible
+            culture.
           </p>
         </div>
       </div>
