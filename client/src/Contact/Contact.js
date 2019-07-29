@@ -41,7 +41,9 @@ class Contact extends Component {
           // onChange={e => this.change(e)}
         />
         <br />
-        <button onClick={e => this.onSubmit(e)}>Submit</button>
+        <button className="submit" onClick={e => this.onSubmit(e)}>
+          Submit
+        </button>
       </form>
     );
   }
