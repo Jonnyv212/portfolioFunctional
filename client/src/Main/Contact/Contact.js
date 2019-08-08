@@ -12,6 +12,7 @@ class Contact extends Component {
 
   render() {
     return (
+      <div id="contact">
       <form className="contactContainer">
         <h1>CONTACT ME</h1>
         <div className="upperContact">
@@ -45,6 +46,7 @@ class Contact extends Component {
           Submit
         </button>
       </form>
+      </div>
     );
   }
 }

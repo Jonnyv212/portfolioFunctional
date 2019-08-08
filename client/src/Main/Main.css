@@ -12,37 +12,6 @@ body {
   background-color: rgb(252, 252, 252);
 }
 
-#about {
-  width: 100%;
-  /* padding-top: 50px; */
-  padding-bottom: 50px;
-  border-bottom: 1px solid rgb(187, 187, 187);
-}
-
-.aboutMe {
-  width: 95%;
-  margin: auto;
-  /* padding-left: 14px; */
-  /* padding-right: 14px; */
-  font-size: 18px;
-  text-align: center;
-}
-@media only screen and (min-width: 768px) {
-  .aboutMe {
-    margin: auto;
-    width: 85%;
-    font-size: 24px;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .aboutMe {
-    margin: auto;
-    width: 70%;
-    font-size: 26px;
-  }
-}
-
 #skills {
   width: 100%;
   /* padding-top: 50px; */
