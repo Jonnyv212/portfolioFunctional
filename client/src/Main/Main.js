@@ -72,6 +72,7 @@ class Main extends Component {
         <Header />
         <About />
         <SkillData />
+        <Projects />
         {/* {this.projects()} */}
         <a href="#about" id="myBtn" title="Go to top">
           Top

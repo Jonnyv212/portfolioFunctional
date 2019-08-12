@@ -2,7 +2,6 @@ import React from "react";
 import "./SkillBlock.css";
 //Template for each skill section.
 const SkillBlock = props => {
-  console.log(props.sData);
   return (
     <div className="skillBlock">
       <ul className="dataUL">

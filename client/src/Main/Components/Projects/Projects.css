@@ -1,0 +1,214 @@
+.project {
+  /* border: solid black; */
+  width: 100%;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  box-shadow: 3px 3px 5px 2px #d6d6d6;
+}
+
+@media only screen and (min-width: 992px) {
+  .project {
+    width: 45%;
+    display: inline-block;
+    margin-left: 30px;
+  }
+}
+.pTitle {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 18px;
+  width: 100%;
+  display: inline-block;
+}
+
+.pImg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: rgba(0, 0, 0, 0.125);
+}
+.pImg img {
+  width: 100%;
+  /* height: 200px; */
+  /* display: block; */
+}
+
+.overlay1 {
+  display: none;
+}
+@media only screen and (min-width: 992px) {
+  .overlay1 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* height: 77%; */
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: #008cba;
+    display: inline-block;
+  }
+}
+.overlay2 {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .overlay2 {
+    position: absolute;
+    /* top: 0; */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 23%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: black;
+    display: inline-block;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .pImg:hover .overlay1 {
+    opacity: 0.9;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .pImg:hover .overlay2 {
+    opacity: 0.9;
+  }
+}
+
+.desktopText {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .desktopText {
+    color: white;
+    font-size: 24px;
+    width: 90%;
+    height: 70%;
+    display: inline-block;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    margin-left: 35px;
+    margin-right: 35px;
+  }
+}
+
+.desktopStack {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .desktopStack {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    padding-left: 0;
+    margin: 0;
+  }
+}
+
+.desktopStack li {
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  .desktopStack li {
+    display: inline-block;
+    width: 80px;
+    padding: 1px;
+    margin-right: 12px;
+    margin-bottom: 3px;
+    margin-top: 1px;
+    border-radius: 10%;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .desktopStack li {
+    width: 100px;
+  }
+}
+
+.mobileText {
+  margin: 16px;
+  font-size: 16px;
+  text-align: center;
+}
+@media only screen and (min-width: 992px) {
+  .mobileText {
+    display: none;
+  }
+}
+
+.mobileStack {
+  width: 100%;
+  display: inline-block;
+  margin: 0;
+  padding-left: 0;
+  /* text-align: center; */
+  font-size: 17px;
+  background-color: rgb(15, 34, 70);
+}
+
+@media only screen and (min-width: 992px) {
+  .mobileStack {
+    display: none;
+  }
+}
+.mobileStack li {
+  display: inline-block;
+  margin: 14px;
+  border-radius: 5%;
+  color: white;
+  /* background-color: rgb(199, 199, 199); */
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
+}
+.pInfo {
+  width: 47%;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: inline-block;
+  font-family: "Calibri", Times, serif;
+  word-wrap: break-word;
+  vertical-align: top;
+}
+
+.PbottomLinks {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.PbottomLinks a {
+  width: 50%;
+  height: 50px;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  padding-top: 10px;
+  display: inline-block;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.PbottomLinks a:hover {
+  background-color: #4caf50; /* Green */
+  color: white;
+}

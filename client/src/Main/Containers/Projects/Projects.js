@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PJdata from "./Projects.json";
+import DisplayProject from "../../Components/Projects/DisplayProject";
 import Fade from "react-reveal/Fade";
 import axios from "axios";
 import "./Projects.css";
@@ -97,18 +98,23 @@ class Projects extends Component {
   //Generates a project based on the data response from the DB.
   //Takes the data and applies it from this function to the projects function.
   projectListPG = () => {
-    let pjName = this.state.data.map(item => item.project_name);
-    let pjImage = this.state.data.map(item => item.project_image);
-    let pjDesc = this.state.data.map(item => item.project_description);
-    let pjPrev = this.state.data.map(item => item.project_preview);
-    let pjSource = this.state.data.map(item => item.project_source);
+    let props = [
+      {
+        pjName: this.state.data.map(item => item.project_name),
+        pjImage: this.state.data.map(item => item.project_image),
+        pjDesc: this.state.data.map(item => item.project_description),
+        pjPrev: this.state.data.map(item => item.project_preview),
+        pjSource: this.state.data.map(item => item.project_source)
+      }
+    ];
     let dataIndex = this.state.data.length;
     let pjFull = [];
 
     //Generate every project from state data.
     for (let i = 0; i < dataIndex; i++) {
       pjFull.push(
-        this.projects(pjName[i], pjImage[i], pjDesc[i], pjPrev[i], pjSource[i])
+        <DisplayProject name={props[i]} />
+        // this.projects(pjName[i], pjImage[i], pjDesc[i], pjPrev[i], pjSource[i])
       );
     }
     return pjFull;
