@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PJdata from "../Main/Main.json";
+import PJdata from "./Projects.json";
 import Fade from "react-reveal/Fade";
 import axios from "axios";
 import "./Projects.css";

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Projects from "../Projects/Projects.js";
-import Skills from "./Skills/Skills.js";
-import Contact from "./Contact/Contact.js";
-import Menu from "./Menu/Menu.js";
-import Header from "./Header/Header.js"
-import About from "./About/About.js"
-import Footer from "./Footer/Footer.js"
+import Projects from "./Containers/Projects/Projects.js";
+import SkillData from "./Containers/Skills/SkillData.js";
+import Contact from "./Containers/Contact/Contact.js";
+import Menu from "./Components/Menu/Menu.js";
+import Header from "./Components/Header/Header.js";
+import About from "./Components/About/About.js";
+import Footer from "./Components/Footer/Footer.js";
 import axios from "axios";
 
 import "./Main.css";
@@ -20,7 +20,6 @@ class Main extends Component {
       message: ""
     };
   }
-
 
   onSubmit = e => {
     e.preventDefault();
@@ -50,7 +49,6 @@ class Main extends Component {
     );
   };
 
-
   render() {
     // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function() {
@@ -73,8 +71,8 @@ class Main extends Component {
         <Menu />
         <Header />
         <About />
-        <Skills />
-        {this.projects()}
+        <SkillData />
+        {/* {this.projects()} */}
         <a href="#about" id="myBtn" title="Go to top">
           Top
         </a>

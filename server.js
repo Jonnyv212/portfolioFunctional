@@ -32,15 +32,6 @@ queryData = (query, path) => {
   });
 };
 
-// let getData = (path, query) => {
-//   let qArray = [];
-
-//   qArray.push(path);
-//   qArray.push(query);
-
-//   return qArray;
-// };
-
 var frontendQuery =
   "SELECT skill_name FROM portfolio.skills " +
   "WHERE portfolio.skills.skill_type = 'Frontend' ";
@@ -59,6 +50,8 @@ var otherPath = "/skills/other";
 queryData(frontendPath, frontendQuery);
 queryData(backendPath, backendQuery);
 queryData(otherPath, otherQuery);
+
+// queryData(otherPath, otherQuery);
 
 // app.get("/skills/backend", (req, res) => {
 //   connection.query(
