@@ -1,24 +1,24 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import PJdata from "./Projects.json";
-import DisplayProject from "../../Components/Projects/DisplayProject";
+import DisplayProjects from "../../Components/Projects/DisplayProjects";
 import Fade from "react-reveal/Fade";
 import axios from "axios";
 import "./Projects.css";
 
-class Projects extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: []
-    };
-  }
+const Projects = () =>{
 
-  componentDidMount = () => {
-    this.getData();
-  };
+  const [projectData, setProjectData] = useState([{}]);
+  const [myProjects, setMyProjects] = useState();
+
+  useEffect(() => {
+    getData();
+  }, []);
+  useEffect(() => {
+    projectListPG();
+  }, []);
 
   //Make an API request to the server to retrieve queried data from the PG DB.
-  getData = () => {
+ const getData = () => {
     axios.get("/projects").then(response => {
       let res = response.data.length;
       let resFull = [];
@@ -27,111 +27,49 @@ class Projects extends Component {
         resFull.push(response.data[i]);
       }
       // Set the data state to array after pushing data to resFull[].
-      this.setState({
-        data: resFull
-      });
+      setProjectData(resFull)
     });
-  };
-
-  //Generates a project template function. Parameters receive data for the output html.
-  projects = (pjName, pjImage, pjDescription, pjPreview, pjSource) => {
-    return (
-      <div className="project">
-        <div className="pTitle">{pjName}</div>
-
-        <div className="pImg">
-          <img className="image" src={pjImage} alt="pjImage" />
-
-          <div className="overlay1">
-            <div className="desktopText">{pjDescription}</div>
-          </div>
-          <div className="overlay2">
-            <ul className="desktopStack">
-              <li>NodeJS</li>
-              <li>ReactJS</li>
-              <li>JavaScript</li>
-              <li>PostgreSQL</li>
-              <li>Axios</li>
-              <li>Express</li>
-            </ul>
-          </div>
-        </div>
-        <div className="mobileText">{pjDescription}</div>
-        <ul className="mobileStack">
-          <li>NodeJS</li>
-          <li>ReactJS</li>
-          <li>JavaScript</li>
-          <li>PostgreSQL</li>
-          <li>Axios</li>
-          <li>Express</li>
-        </ul>
-        <div className="PbottomLinks">
-          <a href={pjPreview}>Demo</a>
-
-          <a href={pjSource} target="blank">
-            Source
-          </a>
-        </div>
-      </div>
-    );
   };
 
   //Generates a project based on the JSON data.
   //Takes the JSON data and applies it from a loop to the projects function.
-  projectListJSON = () => {
-    let pjIndexJSON = PJdata.length;
-    let pjFull = [];
-    for (let i = 0; i < pjIndexJSON; i++) {
-      pjFull.push(
-        this.projects(
-          PJdata[i].projectName,
-          PJdata[i].image,
-          PJdata[i].description,
-          PJdata[i].preview,
-          PJdata[i].source
-        )
-      );
-    }
-    return pjFull;
-  };
+  // projectListJSON = () => {
+  //   let pjIndexJSON = PJdata.length;
+  //   let pjFull = [];
+  //   for (let i = 0; i < pjIndexJSON; i++) {
+  //     pjFull.push(
+  //       this.projects(
+  //         PJdata[i].projectName,
+  //         PJdata[i].image,
+  //         PJdata[i].description,
+  //         PJdata[i].preview,
+  //         PJdata[i].source
+  //       )
+  //     );
+  //   }
+  //   return pjFull;
+  // };
 
   //Generates a project based on the data response from the DB.
   //Takes the data and applies it from this function to the projects function.
-  projectListPG = () => {
-    let props = [
-      {
-        pjName: this.state.data.map(item => item.project_name),
-        pjImage: this.state.data.map(item => item.project_image),
-        pjDesc: this.state.data.map(item => item.project_description),
-        pjPrev: this.state.data.map(item => item.project_preview),
-        pjSource: this.state.data.map(item => item.project_source)
-      }
-    ];
-    let dataIndex = this.state.data.length;
-    let pjFull = [];
+ const projectListPG = () => {
 
-    //Generate every project from state data.
+    let dataIndex = projectData.length;
+    let pjFull = [];    //Generate every project from state data.
     for (let i = 0; i < dataIndex; i++) {
       pjFull.push(
-        <DisplayProject name={props[i]} />
-        // this.projects(pjName[i], pjImage[i], pjDesc[i], pjPrev[i], pjSource[i])
+        <DisplayProjects pjData={projectData[i]} />
       );
     }
-    return pjFull;
+    setMyProjects(pjFull)
+    // return pjFull;
   };
+ const test = () => console.log(projectData[0])
 
-  //Function that returns the generated projects. Determines the source of projects.
-  //If state data is found, generate projects based on database data.
-  //Else, generate from local JSON data.
-  findProjects = () => {
-    if (this.state.data.length > 0) {
-      return this.projectListPG();
-    } else {
-      return this.projectListJSON();
-    }
-  };
-  render() {
-    return <Fade>{this.findProjects()}</Fade>;
-  }
+    return(
+    // <div>{test()}</div>)
+     <Fade>
+      {myProjects}
+      </Fade>)
 }
 export default Projects;
