@@ -1,7 +1,7 @@
 [
   {
     "projectName": "Portfolio",
-    "image": "https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/projects/portfolio_preview.png",
+    "image": "https://jv-portfolio-assets.s3.us-east-2.amazonaws.com/Images/projects/portfolio_preview.PNG",
     "description": "The page you are currently viewing! aaa test test",
     "preview": "Preview",
     "source": "https://github.com/Jonnyv212/Portfolio"

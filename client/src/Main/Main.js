@@ -37,18 +37,6 @@ class Main extends Component {
     });
   };
 
-  //Gets components from Projects/Projects.js
-  // projects = () => {
-  //   return (
-  //     <div id="projects">
-  //       <h1>Projects</h1>
-  //       <div className="content">
-  //         <Projects />
-  //       </div>
-  //     </div>
-  //   );
-  // };
-
   render() {
     // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function() {
@@ -73,7 +61,6 @@ class Main extends Component {
         <About />
         <SkillData />
         <Projects />
-        {/* {this.projects()} */}
         <a href="#about" id="myBtn" title="Go to top">
           Top
         </a>
